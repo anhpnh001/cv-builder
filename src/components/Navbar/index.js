@@ -39,7 +39,7 @@ function Navbar() {
       <div className="container flex justify-between mx-auto">
         <div className="flex items-center">
           <Link
-            to=""
+            to="/"
             className="pr-8 dark:border-gray-800 mr-8 flex items-center space-x-2"
           >
             <HiOutlineDocumentDuplicate className="text-5xl text-blue-600" />

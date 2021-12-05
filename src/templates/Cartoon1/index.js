@@ -11,7 +11,8 @@ import { HiGlobe, HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi'
 import Projects from './Projects'
 import Profiles from './Profiles'
 import Awards from './Awards'
-function Basic({}, ref) {
+
+function Cartoon1({}, ref) {
   const colors = useSelector('metadata.colors')
   const font = useSelector('metadata.font')
   return (
@@ -122,16 +123,14 @@ function Basic({}, ref) {
           />
         </section>
         <section className="z-10 col-span-2 space-y-12">
-          <div>
-            <Avatar
-              path="basics.image"
-              style={{ boxShadow: `1rem 1rem ${colors.primary}` }}
-              className="overflow-hidden rounded-xl bg-white border-2 border-black mr-4"
-            />
-          </div>
+          <Avatar
+            path="basics.image"
+            style={{ boxShadow: `1rem 1rem ${colors.primary}` }}
+            className="overflow-hidden rounded-xl bg-white border-2 border-black mr-4"
+          />
           <Profiles
             path="profiles"
-            className="rounded-xl bg-white border-2 border-black"
+            className="space-y-2 rounded-xl bg-white border-2 border-black"
           />
           <Skills
             path="skills"
@@ -151,4 +150,4 @@ function Basic({}, ref) {
   )
 }
 
-export default forwardRef(Basic)
+export default forwardRef(Cartoon1)

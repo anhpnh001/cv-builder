@@ -20,9 +20,7 @@ function Content() {
   const [isTourOpen, setIsTourOpen] = useLocalStorage('isTourOpen', true)
   const { getResume } = useContext(ResumeListContext)
   const resumeRef = useRef()
-  const Template = templateOptions.find(
-    (option) => option.name === template
-  ).component
+  const Template = templateOptions.find((option) => option.name === template)
 
   const selectors = [
     '[data-tut="first-step"]',
@@ -65,7 +63,7 @@ function Content() {
       <section className="py-4 pr-4 flex-grow">
         <section className="shadow-inner border bg-gray-100 overflow-auto rounded-xl p-6 h-full flex flex-col items-center scrollbar-none">
           <section className="shadow-xl" data-tut="third-step">
-            <Template ref={resumeRef} />
+            {Template && <Template.component ref={resumeRef} />}
           </section>
         </section>
       </section>

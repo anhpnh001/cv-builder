@@ -229,22 +229,24 @@ function Settings() {
   }
 
   return (
-    <div className="space-y-3">
+    <div>
       <Heading path="settings" />
-      <button
-        data-tut="fourth-step"
-        onClick={handleReset}
-        className="w-full bg-gray-800 hover:bg-gray-900 text-white text-sm font-medium py-3 px-4 rounded-lg flex space-x-2 items-center justify-center"
-      >
-        <IoWarning size="18" />
-        <span>{t(`builder.actions.resetEverything.button`)}</span>
-      </button>
-      <Select
-        menuPlacement="auto"
-        onChange={handleChangeLanguage}
-        value={options.find((x) => x.value === language)}
-        options={options}
-      />
+      <div className="space-y-3">
+        <Select
+          menuPlacement="auto"
+          onChange={handleChangeLanguage}
+          value={options.find((x) => x.value === language)}
+          options={options}
+        />
+        <button
+          data-tut="fourth-step"
+          onClick={handleReset}
+          className="w-full bg-gray-800 hover:bg-gray-900 text-white text-sm font-medium py-3 px-4 rounded-lg flex space-x-2 items-center justify-center"
+        >
+          <IoWarning size="18" />
+          <span>{t(`builder.actions.resetEverything.button`)}</span>
+        </button>
+      </div>
     </div>
   )
 }

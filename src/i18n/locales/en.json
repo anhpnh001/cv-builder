@@ -75,6 +75,7 @@
     ],
     "buttons": {
       "create": "Create",
+      "createCV": "Create CV",
       "about": "About",
       "viewMore": "View more"
     }

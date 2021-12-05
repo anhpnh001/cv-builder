@@ -19,7 +19,7 @@ function Interests({ path, className, style }) {
     <>
       {visible && (
         <div style={style} className={className}>
-          <SectionWrapper path={path}>
+          <SectionWrapper path={path} className="space-y-2">
             {stateValue.map((item, index) => (
               <ItemWrapper
                 key={index}

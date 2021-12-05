@@ -77,7 +77,7 @@ function ResumeProvider({ children }) {
         default:
           return state
         case 'reset_data':
-          newState = initialState
+          newState = { ...initialState, metadata: state.metadata }
           debouncedUpdateResume(newState)
           return newState
       }

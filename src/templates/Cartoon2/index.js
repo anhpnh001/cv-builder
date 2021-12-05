@@ -12,7 +12,7 @@ import Projects from './Projects'
 import Skills from './Skills'
 import Work from './Work'
 
-function Basic({}, ref) {
+function Cartoon2({}, ref) {
   const colors = useSelector('metadata.colors')
   const font = useSelector('metadata.font')
   return (
@@ -123,13 +123,11 @@ function Basic({}, ref) {
           />
         </section>
         <section className="z-10 col-span-2 space-y-12">
-          <div>
-            <Avatar
-              path="basics.image"
-              style={{ boxShadow: `1rem 1rem ${colors.primary}` }}
-              className="bg-white border-2 border-black mr-4"
-            />
-          </div>
+          <Avatar
+            path="basics.image"
+            style={{ boxShadow: `1rem 1rem ${colors.primary}` }}
+            className="bg-white border-2 border-black mr-4"
+          />
           <Profiles
             path="profiles"
             className="bg-white border-2 border-black"
@@ -149,4 +147,4 @@ function Basic({}, ref) {
   )
 }
 
-export default forwardRef(Basic)
+export default forwardRef(Cartoon2)

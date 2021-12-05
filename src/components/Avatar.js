@@ -110,24 +110,28 @@ function Avatar({ path, style, className }) {
     },
   })
 
-  const handleCropButtonClick = () => {
+  const handleCropButton = () => {
     makeClientCrop(crop)
     setShowImageCropDialog(false)
   }
 
-  const handleCancelButtonClick = () => {
+  const handleCancelButton = () => {
     setShowImageCropDialog(false)
   }
   return (
     <div style={style} className={className}>
       {showImageCropDialog && (
-        <section className="flex justify-center items-center w-screen h-screen bg-black bg-opacity-80 z-50 fixed top-0 left-0">
-          <section className="w-1/3 rounded-3xl overflow-hidden border bg-white">
-            <div className="flex flex-col px-6 py-8 space-y-6">
-              <div className="flex justify-center items-center space-x-2">
-                <IoCrop size="32" className="text-blue-600" />
-                <p className="text-center text-xl font-medium">Crop Image</p>
-              </div>
+        <>
+          <section
+            onClick={handleCancelButton}
+            className="cursor-pointer bg-black bg-opacity-80 flex justify-center items-center w-screen h-screen z-40 fixed top-0 left-0"
+          ></section>
+          <section className="z-50 flex flex-col px-6 py-8 space-y-6 rounded-3xl overflow-hidden border bg-white fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+            <div className="flex justify-center items-center space-x-2">
+              <IoCrop size="32" className="text-blue-600" />
+              <p className="text-center text-xl font-medium">Crop Image</p>
+            </div>
+            <div className="w-96 max-h-96 overflow-auto scrollbar-none">
               <ReactCrop
                 src={src}
                 crop={crop}
@@ -135,25 +139,24 @@ function Avatar({ path, style, className }) {
                 onImageLoaded={onImageLoaded}
                 onComplete={onCropComplete}
                 onChange={(newCrop) => setCrop(newCrop)}
-                className="rounded-3xl border"
               />
-              <div className="space-x-4 flex justify-end">
-                <button
-                  onClick={handleCancelButtonClick}
-                  className="h-10 px-8 rounded-full text-blue-600 font-medium"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleCropButtonClick}
-                  className="bg-blue-100 h-10 px-10 rounded-xl text-blue-600 font-medium"
-                >
-                  Save
-                </button>
-              </div>
+            </div>
+            <div className="space-x-4 flex justify-end">
+              <button
+                onClick={handleCancelButton}
+                className="h-10 px-8 rounded-full text-blue-600 font-medium"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCropButton}
+                className="bg-blue-100 h-10 px-10 rounded-xl text-blue-600 font-medium"
+              >
+                Save
+              </button>
             </div>
           </section>
-        </section>
+        </>
       )}
       <div
         className="group aspect-w-1 aspect-h-1 relative w-full h-full"

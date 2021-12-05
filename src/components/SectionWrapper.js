@@ -48,7 +48,7 @@ function SectionToolbar({ path }) {
       {showTab && (
         <div
           onMouseLeave={() => setShowTab(null)}
-          className="bg-gray-100 px-6 py-4 z-40 absolute top-0 right-0 max-w-full max-h-full flex flex-col"
+          className="rounded-xl bg-gray-100 px-6 py-4 z-40 absolute top-0 right-0 max-w-full max-h-full flex flex-col"
         >
           {showTab === 'details' && (
             <div className="overflow-y-auto scrollbar-none">
