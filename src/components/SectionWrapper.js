@@ -122,7 +122,7 @@ function SectionWrapper({ path, className, children }) {
     <section
       onMouseEnter={() => setShowToolbar(true)}
       onMouseLeave={() => setShowToolbar(false)}
-      className="relative hover:bg-gray-100 p-4 transition"
+      className="relative hover:bg-gray-100 p-4 transition rounded-l-xl rounded-b-xl"
     >
       {showToolbar && (
         // <div className="bg-gray-100 rounded-l-xl rounded-b-xl absolute -inset-3">

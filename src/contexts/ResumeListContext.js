@@ -57,7 +57,7 @@ function ResumeListProvider({ children }) {
     setResumeUniqueId(newResumeId)
     setResumeList([...resumeList, newResume])
     // Redirect to resumeId
-    navigate(`cv-builder/editor/${newResumeId}`)
+    navigate(`/editor/${newResumeId}`)
     toast.success(t('builder.toasts.created', { name: newResumeId }))
   }
 

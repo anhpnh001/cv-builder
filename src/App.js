@@ -15,8 +15,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/cv-builder" element={<Home />}></Route>
-        <Route path="/cv-builder/editor">
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/editor">
           <Route path=":resumeId" element={<Content />} />
           <Route path="create" element={<NewResume />} />
           <Route path="trash" element={<ResumeListDeleted />} />

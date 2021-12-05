@@ -30,7 +30,7 @@ function ResumeListDeleted() {
           </p>
         </section>
         <Link
-          to="/cv-builder/editor"
+          to="/editor"
           className="group relative flex items-center justify-center w-16 h-16 mb-8 bg-gray-200 rounded-lg shadow-inner"
         >
           <span className="bg-blue-600 rounded-full text-xs h-8 w-8 flex items-center justify-center text-white border absolute bottom-full left-full transform -translate-x-1/2 translate-y-1/2">
@@ -43,35 +43,43 @@ function ResumeListDeleted() {
             .reverse()
             .map((resume) => {
               return (
-                <div
-                  key={resume.id}
-                  className="hover:shadow-xl transition duration-500 overflow-hidden group relative bg-gray-100 aspect-w-3 aspect-h-4 rounded-xl"
-                >
-                  <div className=" flex flex-col flex-grow h-full">
-                    <div className="w-full absolute top-0 left-0 bg-gradient-to-b from-black text-white p-4">
-                      {resume.id}
-                    </div>
-                    <img
-                      src="https://source.unsplash.com/random"
-                      alt={resume.id}
-                      className="object-cover w-full h-full"
-                    />
-                    <div className="group-hover:opacity-100 group-hover:translate-y-0 transition duration-200 transform translate-y-full opacity-0 absolute bottom-0 left-0 w-full h-10 flex justify-center items-center">
-                      <button
-                        onClick={() => deleteResume(resume.id)}
-                        className="hover:bg-red-500 bg-gray-200 hover:text-white w-10 h-10 flex items-center justify-center transition"
-                      >
-                        <HiOutlineTrash className="w-5 h-5" />
-                      </button>
-                      <button
+                <div>
+                  <div
+                    key={resume.id}
+                    className="hover:shadow-xl border transition overflow-hidden group relative bg-gray-100 aspect-w-3 aspect-h-4 rounded-xl"
+                  >
+                    <div className=" flex flex-col flex-grow h-full">
+                      <div
                         onClick={() => restoreResume(resume.id)}
-                        className="hover:bg-blue-500 hover:text-white flex flex-grow items-center justify-center bg-gray-200 h-10 px-4 transition"
+                        className="relative w-full h-full cursor-pointer"
                       >
-                        <span>Restore</span>
-                        <HiOutlineRefresh className="w-5 h-5 ml-1" />
-                      </button>
+                        <img
+                          src={
+                            process.env.PUBLIC_URL + resume.metadata.thumbnail
+                          }
+                          alt={resume.id}
+                          className="object-cover w-full h-full"
+                        />
+                        <div className="group-hover:opacity-100 opacity-0 absolute bg-black bg-opacity-20 transition top-0 left-0 w-full h-full flex justify-center items-center">
+                          <HiOutlineRefresh className="text-5xl text-gray-200" />
+                        </div>
+                      </div>
+                      <div className="group-hover:opacity-100 hover:bg-red-500 hover:text-white bg-gray-50 rounded-lg  transition opacity-0 absolute bottom-2 right-2 w-8 h-8 flex justify-center items-center">
+                        <button
+                          onClick={() => deleteResume(resume.id)}
+                          className="flex items-center justify-center w-10 h-10 transition"
+                        >
+                          <HiOutlineTrash className="text-xl" />
+                        </button>
+                      </div>
                     </div>
                   </div>
+                  <Link
+                    to={`/cv-builder/editor/${resume.id}`}
+                    className="text-center block font-medium mt-2"
+                  >
+                    {resume.metadata.name}
+                  </Link>
                 </div>
               )
             })}

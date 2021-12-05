@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import i18next from 'i18next'
 import { useContext, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { HiOutlineDocumentDuplicate, HiOutlineFolderOpen } from 'react-icons/hi'
 import { RiMoonFoggyLine, RiSunFoggyLine } from 'react-icons/ri'
 import { Link, NavLink } from 'react-router-dom'
@@ -10,6 +11,7 @@ import useDarkMode from '../../hooks/useDarkMode'
 import { languages } from '../../i18n'
 
 function Navbar() {
+  const { t } = useTranslation()
   const { getNumberOfResumes, createResume } = useContext(ResumeListContext)
   const [darkMode, setDarkMode] = useDarkMode()
   const [language, setLanguage] = useState(() =>
@@ -31,13 +33,13 @@ function Navbar() {
   const options = languages.map((language) => {
     return { value: language.code, label: language.name }
   })
-  console.log(options)
+
   return (
     <nav className="z-50 h-24 flex fixed top-0 inset-x-0 bg-white bg-opacity-75 dark:bg-black transition">
       <div className="container flex justify-between mx-auto">
         <div className="flex items-center">
           <Link
-            to="/cv-builder"
+            to=""
             className="pr-8 dark:border-gray-800 mr-8 flex items-center space-x-2"
           >
             <HiOutlineDocumentDuplicate className="text-5xl text-blue-600" />
@@ -48,9 +50,9 @@ function Navbar() {
           <div className="flex space-x-6">
             <button
               onClick={createResume}
-              className="hover:text-gray-900 text-sm flex items-center space-x-1 font-semibold"
+              className="hover:text-gray-900 text-gray-600 text-sm capitalize flex items-center space-x-1 font-semibold"
             >
-              Create
+              {t('landing.buttons.create')}
             </button>
             {/* <NavLink
               to="/template"
@@ -67,15 +69,15 @@ function Navbar() {
               Template
             </NavLink> */}
             <a
-              href="https://www.linkedin.com/in/teoanhss113/"
-              className="text-gray-600 hover:text-gray-900 text-sm flex items-center space-x-1 font-semibold"
+              href="https://www.facebook.com/phanh.1521/"
+              className="hover:text-gray-900 text-gray-600 text-sm capitalize flex items-center space-x-1 font-semibold"
             >
-              About
+              {t('landing.buttons.about')}
             </a>
           </div>
         </div>
         <div className="flex space-x-4 items-center">
-          <Link to="/cv-builder/editor">
+          <Link to="/editor">
             <div className="relative mr-4">
               <span className="bg-blue-600 rounded-full text-xs h-8 w-8 flex items-center justify-center text-white px-2 border absolute bottom-full left-full transform -translate-x-1/2 translate-y-1/2">
                 {getNumberOfResumes() > 9 ? '9+' : getNumberOfResumes()}

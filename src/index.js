@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, HashRouter } from 'react-router-dom'
 import './i18n'
 import './index.css'
 import App from './App'
@@ -11,7 +11,7 @@ import { ResumeListDeletedProvider } from './contexts/ResumeListDeletedContext'
 import { ResumeProvider } from './contexts/ResumeContext'
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <ResumeUniqueIdProvider>
       <ResumeListProvider>
         <ResumeListDeletedProvider>
@@ -21,6 +21,6 @@ ReactDOM.render(
         </ResumeListDeletedProvider>
       </ResumeListProvider>
     </ResumeUniqueIdProvider>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 )

@@ -10,7 +10,7 @@ function LeftNavbar() {
   return (
     <section className="w-20 h-full flex flex-col items-center justify-center space-y-4">
       <Link
-        to="/cv-builder"
+        to="/"
         className="border-b w-12 h-20 flex justify-center items-center"
       >
         <HiOutlineDocumentDuplicate size="36" className="text-blue-600" />

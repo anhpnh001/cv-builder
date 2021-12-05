@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { SketchPicker } from 'react-color'
 import { useTranslation } from 'react-i18next'
 import { HiDownload, HiOutlineChevronLeft } from 'react-icons/hi'
+import { IoWarning } from 'react-icons/io5'
 import { Element } from 'react-scroll'
 import Select from 'react-select'
 import { useDispatch, useSelector } from '../../../contexts/ResumeContext'
@@ -47,7 +48,10 @@ function Layout() {
                   })
                 }}
               />
-              <label htmlFor={key} className="capitalize text-s">
+              <label
+                htmlFor={key}
+                className="flex-grow capitalize text-s cursor-pointer"
+              >
                 {t(`builder.sections.${key}`)}
               </label>
             </div>
@@ -61,12 +65,19 @@ function Layout() {
 function Templates() {
   const dispatch = useDispatch()
 
-  const handleChange = (name) => {
+  const handleChange = (name, thumbnail) => {
     dispatch({
       type: 'on_input',
       payload: {
         path: 'metadata.template',
         value: name,
+      },
+    })
+    dispatch({
+      type: 'on_input',
+      payload: {
+        path: 'metadata.thumbnail',
+        value: thumbnail,
       },
     })
   }
@@ -78,7 +89,7 @@ function Templates() {
           <div>
             <div
               key={name}
-              onClick={() => handleChange(name)}
+              onClick={() => handleChange(name, thumbnail)}
               className="rounded-lg overflow-hidden cursor-pointer mb-2 border"
             >
               <img
@@ -114,6 +125,7 @@ function Fonts() {
     <div>
       <Heading path="fonts" />
       <Select
+        menuPlacement="auto"
         value={options.find((option) => option.value === font)}
         options={options}
         onChange={handleChange}
@@ -155,7 +167,7 @@ function Color({ path }) {
   return (
     <div>
       <h4 className="mb-1">{t(`builder.colors.${path}`)}</h4>
-      <div className="relative">
+      <div className="relative cursor-pointer">
         <div
           onMouseDown={() => setShowColorPicker(!showColorPicker)}
           className="border flex items-center h-10 rounded-lg"
@@ -192,6 +204,8 @@ function Color({ path }) {
 }
 
 function Settings() {
+  const { t } = useTranslation()
+  const dispatch = useDispatch()
   const [language, setLanguage] = useState(() =>
     localStorage.getItem('language') ? localStorage.getItem('language') : 'en'
   )
@@ -208,10 +222,25 @@ function Settings() {
     return { value: language.code, label: language.name }
   })
 
+  const handleReset = () => {
+    dispatch({
+      type: 'reset_data',
+    })
+  }
+
   return (
-    <div>
+    <div className="space-y-3">
       <Heading path="settings" />
+      <button
+        data-tut="fourth-step"
+        onClick={handleReset}
+        className="w-full bg-gray-800 hover:bg-gray-900 text-white text-sm font-medium py-3 px-4 rounded-lg flex space-x-2 items-center justify-center"
+      >
+        <IoWarning size="18" />
+        <span>{t(`builder.actions.resetEverything.button`)}</span>
+      </button>
       <Select
+        menuPlacement="auto"
         onChange={handleChangeLanguage}
         value={options.find((x) => x.value === language)}
         options={options}
@@ -221,6 +250,7 @@ function Settings() {
 }
 
 function LeftSidebar({ onExportPDF }) {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
   const name = useSelector('metadata.name')
 
@@ -249,16 +279,16 @@ function LeftSidebar({ onExportPDF }) {
         </span>
       </div>
       <div
-        className="flex-grow h-full py-4 space-y-4 overflow-y-auto scrollbar-none"
+        className="flex-grow h-full px-2 py-4 space-y-4 overflow-y-auto scrollbar-none"
         id="containerElement"
       >
         <button
           data-tut="fourth-step"
           onClick={onExportPDF}
-          className="w-full bg-gray-800 hover:bg-gray-400 text-white text-sm font-medium py-3 px-4 rounded-lg flex items-center justify-center"
+          className="w-full bg-gray-800 hover:bg-gray-900 text-white text-sm font-medium py-3 px-4 rounded-lg flex space-x-2 items-center justify-center"
         >
           <HiDownload size="18" />
-          <span>Download</span>
+          <span>{t(`builder.actions.export.button`)}</span>
         </button>
         {/* <button onClick={saveJSON}>Export JSON</button>
           <input type="file" onChange={importJSON} /> */}

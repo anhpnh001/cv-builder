@@ -41,9 +41,6 @@
   "landing": {
     "greeting": "Let's build your CV!",
     "slogan": "All you need to do is just edit",
-    "hero": {
-      "goToApp": "Go To App"
-    },
     "features": [
       {
         "heading": "Friendly interface",
@@ -77,6 +74,8 @@
       }
     ],
     "buttons": {
+      "create": "Create",
+      "about": "About",
       "viewMore": "View more"
     }
   },

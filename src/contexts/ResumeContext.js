@@ -76,6 +76,10 @@ function ResumeProvider({ children }) {
           return newState
         default:
           return state
+        case 'reset_data':
+          newState = initialState
+          debouncedUpdateResume(newState)
+          return newState
       }
     },
     [debouncedUpdateResume]

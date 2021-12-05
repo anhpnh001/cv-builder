@@ -41,7 +41,7 @@ function NotFound() {
             Create Resume
           </button>
           <Link
-            to="/cv-builder"
+            to="/"
             className="text-blue-500 text-lg font-medium rounded-xl px-6 py-3"
           >
             Back to Homepage

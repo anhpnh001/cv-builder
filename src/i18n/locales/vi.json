@@ -74,6 +74,8 @@
       }
     ],
     "buttons": {
+      "create": "Tạo mới",
+      "about": "Về chúng tôi",
       "viewMore": "Xem thêm"
     }
   },
@@ -158,7 +160,7 @@
     "sections": {
       "heading": "Tiêu đề",
       "basics": "Thông tin cơ bản",
-      "profile": "Hồ sơ",
+      "profiles": "Hồ sơ",
       "social": "Mạng xã hội",
       "objective": "Mục tiêu",
       "work": "Kinh nghiệm làm việc",

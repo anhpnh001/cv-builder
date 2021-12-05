@@ -134,6 +134,7 @@ const initialState = {
     },
     language: '',
     template: 'Cartoon1',
+    thumbnail: '/assets/img/templates/cartoon1.jpg',
     sections: {
       // basics: {
       //   heading: 'Basics',
