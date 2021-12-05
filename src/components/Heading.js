@@ -1,6 +1,5 @@
 import 'rc-slider/assets/index.css'
 import React, { memo, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from '../contexts/ResumeContext.js'
 
 function Heading({ path, style, className }) {

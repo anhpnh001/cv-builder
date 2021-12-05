@@ -12,7 +12,6 @@ import { languages } from '../../../i18n'
 
 function Heading({ path }) {
   const { t } = useTranslation()
-  const dispatch = useDispatch()
   return (
     <div className="flex items-center space-x-2 mb-4">
       <h4 className="font-semibold text-xl">{t(`builder.sections.${path}`)}</h4>
@@ -60,14 +59,7 @@ function Layout() {
 }
 
 function Templates() {
-  const { t } = useTranslation()
   const dispatch = useDispatch()
-  const template = useSelector('metadata.template')
-
-  const options = templateOptions.map(({ name }) => ({
-    label: name,
-    value: name,
-  }))
 
   const handleChange = (name) => {
     dispatch({
@@ -99,17 +91,11 @@ function Templates() {
           </div>
         ))}
       </div>
-      {/* <Select
-        value={options.find((option) => option.value === template)}
-        options={options}
-        onChange={handleChange}
-      /> */}
     </div>
   )
 }
 
 function Fonts() {
-  const { t } = useTranslation()
   const dispatch = useDispatch()
   const font = useSelector('metadata.font')
 
@@ -206,8 +192,6 @@ function Color({ path }) {
 }
 
 function Settings() {
-  const { t } = useTranslation()
-  const dispatch = useDispatch()
   const [language, setLanguage] = useState(() =>
     localStorage.getItem('language') ? localStorage.getItem('language') : 'en'
   )
@@ -239,8 +223,6 @@ function Settings() {
 function LeftSidebar({ onExportPDF }) {
   const dispatch = useDispatch()
   const name = useSelector('metadata.name')
-  const colors = useSelector('metadata.colors')
-  const [displayColorPicker, setDisplayColorPicker] = useState(false)
 
   const handleChangeName = (value) => {
     dispatch({
@@ -295,59 +277,8 @@ function LeftSidebar({ onExportPDF }) {
         <Element name="settings">
           <Settings />
         </Element>
-        {/* <SidebarEditor /> */}
-        {/* <RightSidebar />
-        <RightNavbar /> */}
-        {/* <div className="space-y-4 scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent pw-full h-full py-4 overflow-y-auto">
-          <div className="flex justify-between items-center">
-            <span className="font-medium text-gray-500">New</span>
-            <button className="bg-blue-50 w-8 h-8 rounded-xl flex justify-center items-center">
-              <HiOutlinePlusSm size="16" className="text-blue-600" />
-            </button>
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-500">Name</label>
-            <InlineToolbarEditor path="basics.name" />
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-500">Name</label>
-            <input
-              type="text"
-              className="w-full h-10 px-4 outline-none bg-gray-100 shadow-inner rounded-lg"
-              placeholder="Search"
-            />
-          </div>
-          <div className="space-x-4 flex">
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-500">Name</label>
-              <input
-                type="text"
-                className="w-full h-10 px-4 outline-none bg-gray-100 shadow-inner rounded-lg"
-                placeholder="Search"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-500">Name</label>
-              <input
-                type="text"
-                className="w-full h-10 px-4 outline-none bg-gray-100 shadow-inner rounded-lg"
-                placeholder="Search"
-              />
-            </div>
-          </div>
-          <InlineToolbarEditor />
-        </div> */}
       </div>
     </section>
-  )
-}
-
-function SidebarIcon({ icon }) {
-  return (
-    <div className="hover:rounded-lg hover:bg-gray-200 cursor-pointer text-gray-700 transition duration-400 rounded-full flex justify-center items-center w-8 h-8">
-      {icon}
-    </div>
   )
 }
 

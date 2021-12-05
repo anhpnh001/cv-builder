@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router'
+import { useSearchParams } from 'react-router-dom'
 import { ResumeListContext } from '../contexts/ResumeListContext'
 import { ResumeUniqueIdContext } from '../contexts/ResumeUniqueIdContext'
 import initialState from '../data/initialState'
-import { useNavigate } from 'react-router'
-import { useSearchParams } from 'react-router-dom'
 
 function NewResume() {
   const navigate = useNavigate()

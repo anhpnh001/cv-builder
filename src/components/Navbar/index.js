@@ -52,7 +52,7 @@ function Navbar() {
             >
               Create
             </button>
-            <NavLink
+            {/* <NavLink
               to="/template"
               className={({ isActive }) =>
                 classNames(
@@ -65,7 +65,7 @@ function Navbar() {
               }
             >
               Template
-            </NavLink>
+            </NavLink> */}
             <a
               href="https://www.linkedin.com/in/teoanhss113/"
               className="text-gray-600 hover:text-gray-900 text-sm flex items-center space-x-1 font-semibold"
@@ -83,28 +83,18 @@ function Navbar() {
               <HiOutlineFolderOpen className="text-3xl text-blue-600" />
             </div>
           </Link>
-          <span onClick={handleDarkMode} className="cursor-pointer">
+          {/* <span onClick={handleDarkMode} className="cursor-pointer">
             {darkMode ? (
               <RiSunFoggyLine className="text-3xl text-yellow-300" />
             ) : (
               <RiMoonFoggyLine className="text-3xl text-blue-600" />
             )}
-          </span>
+          </span> */}
           <Select
             onChange={handleChangeLanguage}
             value={options.find((x) => x.value === language)}
             options={options}
           />
-          {/* <div className="flex items-center rounded-full border-2 border-gray-100 overflow-hidden">
-            <input
-              type="text"
-              className=" w-48 px-6 outline-none bg-transparent"
-              placeholder="Search "
-            />
-            <span className="w-10 h-10 flex justify-center items-center cursor-pointer bg-blue-600">
-              <BiSearchAlt className="text-2xl text-gray-50" />
-            </span>
-          </div> */}
         </div>
       </div>
     </nav>

@@ -32,7 +32,7 @@ function Basic({}, ref) {
           className="absolute bottom-0 w-full"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             clipRule="evenodd"
             d="M321.572 640.562C252.212 631.565 191.121 597.459 135.234 554.619C73.5633 507.345 -12.0585 461.606 -15.092 382.491C-18.1758 302.067 71.2714 254.428 121.335 192.126C156.425 148.458 184.016 97.863 233.565 73.05C281.227 49.1817 335.475 66.545 387.873 58.6492C466.756 46.7625 551.923 -30.9634 617.381 15.2138C680.159 59.5002 633.831 165.299 648.076 242.207C662.097 317.909 724.548 388.214 700.002 461.276C675.142 535.269 595.379 572.486 526.083 605.316C461.671 635.832 391.754 649.666 321.572 640.562Z"
             fill="current"
@@ -61,7 +61,6 @@ function Basic({}, ref) {
               style={{ color: colors.heading }}
               className="text-2xl font-medium"
             />
-
             <span
               style={{ backgroundColor: colors.primary }}
               className="w-24 h-2 inline-block rounded-full"

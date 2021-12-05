@@ -7,7 +7,6 @@ import {
 import { MdOutlineDownloadDone } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { ResumeListContext } from '../contexts/ResumeListContext'
-import { ResumeListDeletedContext } from '../contexts/ResumeListDeletedContext'
 import Footer from './Footer'
 import Navbar from './Navbar'
 
@@ -18,9 +17,6 @@ function ResumeList() {
     moveResumeToTrash,
     createResume,
   } = useContext(ResumeListContext)
-  const [resumeListDeleted, setResumeListDeleted] = useContext(
-    ResumeListDeletedContext
-  )
   // const removeResume = (id) => {
   //   const resumeIndex = resumeList.findIndex((resume) => resume.id === id)
   //   setResumeListDeleted([...resumeListDeleted, resumeList[resumeIndex]])

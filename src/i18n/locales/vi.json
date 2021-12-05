@@ -41,9 +41,6 @@
   "landing": {
     "greeting": "Tạo mới CV ngay!",
     "slogan": "Tất cả những gì bạn cần làm là chỉnh sửa chúng",
-    "hero": {
-      "goToApp": "Đi tới ứng dụng"
-    },
     "features": [
       {
         "heading": "Giao diện thân thiện",
@@ -103,6 +100,8 @@
       "Khi tất cả đã xong, bạn chỉ cần nhấn vào đây để tải về"
     ],
     "hints": {
+      "basics": [],
+      "profiles": [],
       "work": [
         "Chuyển đổi các vị trí xung quanh CV nếu một số kinh nghiệm cụ thể phù hợp hơn với vị trí mà bạn đang ứng tuyển.",
         "Bao gồm khoảng 2 - 4 kinh nghiệm làm việc liên quan đến vị trí bạn đang ứng tuyển.",

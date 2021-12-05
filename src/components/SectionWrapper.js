@@ -98,7 +98,7 @@ function SectionWrapper({ path, className, children }) {
   const [showToolbar, setShowToolbar] = useState(false)
 
   const onDragEnd = (result) => {
-    const { destination, source, draggableId } = result
+    const { destination, source } = result
     if (!destination) {
       return
     }

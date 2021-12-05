@@ -1,14 +1,13 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import Navbar from './Navbar'
-import Footer from './Footer'
 import {
-  HiOutlineTrash,
-  HiOutlineRefresh,
   HiOutlineFolderOpen,
+  HiOutlineRefresh,
+  HiOutlineTrash,
 } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 import { ResumeListContext } from '../contexts/ResumeListContext'
-import { ResumeListDeletedContext } from '../contexts/ResumeListDeletedContext'
+import Footer from './Footer'
+import Navbar from './Navbar'
 
 function ResumeListDeleted() {
   const {
@@ -17,25 +16,7 @@ function ResumeListDeleted() {
     deleteResume,
     restoreResume,
   } = useContext(ResumeListContext)
-  // const removeResume = (id) => {
-  //   const resumeIndex = resumeListDeleted.findIndex(
-  //     (resume) => resume.id === id
-  //   )
-  //   const newResumeListDeleted = [...resumeListDeleted]
-  //   newResumeListDeleted.splice(resumeIndex, 1)
-  //   setResumeListDeleted(newResumeListDeleted)
-  // }
 
-  // const restoreResume = (id) => {
-  //   const resumeIndex = resumeListDeleted.findIndex(
-  //     (resume) => resume.id === id
-  //   )
-  //   const newResumeListDeleted = [...resumeListDeleted]
-  //   newResumeListDeleted.splice(resumeIndex, 1)
-  //   resumeListDeleted[resumeIndex].dateModified = new Date()
-  //   setResumeList([...resumeList, resumeListDeleted[resumeIndex]])
-  //   setResumeListDeleted(newResumeListDeleted)
-  // }
   return (
     <>
       <Navbar />

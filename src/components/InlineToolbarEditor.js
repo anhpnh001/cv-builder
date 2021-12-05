@@ -59,7 +59,7 @@ function InlineToolbarEditor({ path, style, className, toolbar = true }) {
           blocksFromHTML.contentBlocks,
           blocksFromHTML.entityMap
         )
-        return EditorState.createWithContent(state)
+        return EditorState.createWithContent(state, decorator)
       }
     })
   }, [stateValue])

@@ -52,7 +52,7 @@ function Home() {
                   <span className="inline-block w-3 h-3 rounded-full bg-green-500"></span>
                 </div>
                 <div className="rounded-md flex relative justify-center items-center bg-gray-100 w-48 h-7">
-                  <p className="text-sm">localhost:300</p>
+                  <p className="text-sm">localhost:3000</p>
                   <MdOutlineRefresh size="16" className="absolute right-1" />
                 </div>
               </div>

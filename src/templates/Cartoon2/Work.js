@@ -1,12 +1,10 @@
-import { useDispatch, useSelector } from '../../contexts/ResumeContext.js'
 import InlineToolbarEditor from '../../components/InlineToolbarEditor'
 import { ItemWrapper } from '../../components/ItemWrapper.js'
 import SectionWrapper from '../../components/SectionWrapper.js'
+import { useSelector } from '../../contexts/ResumeContext.js'
 
 function Work({ path, style, className }) {
-  const dispatch = useDispatch()
   const stateValue = useSelector(path)
-  const colors = useSelector('metadata.colors')
   const visible = useSelector(`metadata.sections.${path}.visible`)
 
   return (

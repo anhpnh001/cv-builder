@@ -1,13 +1,16 @@
 //Add Link Component
 import { CompositeDecorator, EditorState, Modifier, RichUtils } from 'draft-js'
 import React from 'react'
+import { useSelector } from '../contexts/ResumeContext'
 
 const Link = ({ entityKey, contentState, children }) => {
+  const colors = useSelector('metadata.colors')
   const { url } = contentState.getEntity(entityKey).getData()
   return (
     <a
-      style={{ color: 'blue', fontStyle: 'italic' }}
+      style={{ color: colors.primary }}
       href={url}
+      rel="noreferrer"
       target="_blank"
     >
       {children}

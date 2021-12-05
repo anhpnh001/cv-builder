@@ -23,9 +23,7 @@ const options = [
 ]
 
 function Profiles({ path, style, className }) {
-  const dispatch = useDispatch()
-  const stateValue = useSelector(`basics.${path}`)
-  const colors = useSelector('metadata.colors')
+  const stateValue = useSelector(path)
   const visible = useSelector(`metadata.sections.${path}.visible`)
 
   return (
@@ -55,7 +53,7 @@ function Details({ path, item, index }) {
   const dispatch = useDispatch()
   const detailsValue = useSelector(`metadata.sections.${path}.details`)
   const colors = useSelector('metadata.colors')
-  const networkValue = useSelector(`basics.${path}[${index}].network`)
+  const networkValue = useSelector(`${path}[${index}].network`)
   const [selectedOption, setSelectedOption] = useState({
     value: 'Website',
     label: <BsGlobe />,
@@ -72,7 +70,7 @@ function Details({ path, item, index }) {
     dispatch({
       type: 'on_input',
       payload: {
-        path: `basics.${path}[${index}].network`,
+        path: `${path}[${index}].network`,
         value: selectedOption.value,
       },
     })
@@ -112,7 +110,7 @@ function Details({ path, item, index }) {
       )}
       {detailsValue.username.visible && (
         <InlineToolbarEditor
-          path={`basics.${path}[${index}].username`}
+          path={`${path}[${index}].username`}
           className="flex-1 min-w-0"
         />
       )}

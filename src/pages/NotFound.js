@@ -1,6 +1,6 @@
 import { useContext } from 'react'
+import { HiOutlineDocumentDuplicate } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
-import { HiOutlineDocumentDuplicate, HiOutlineFolderOpen } from 'react-icons/hi'
 import { ResumeListContext } from '../contexts/ResumeListContext'
 
 function NotFound() {

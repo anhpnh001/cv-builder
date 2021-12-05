@@ -82,7 +82,7 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "createResume": "Create Resume",
+    "createResume": "Create CV",
     "editResume": "Edit Resume",
     "lastUpdated": "Last Updated {{timestamp}}",
     "toasts": {
@@ -103,9 +103,8 @@
       "When you finish, you just need to click here to download"
     ],
     "hints": {
-      "basics": {
-        "profiles": []
-      },
+      "basics": [],
+      "profiles": [],
       "work": [
         "Switch positions around the resume if some particular experiences are more relevant to a certain position you are applying for.",
         "Include between 2-4 work experiences that are relevant to the job you are applying.",

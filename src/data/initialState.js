@@ -1,4 +1,6 @@
-export default {
+import { init } from 'i18next'
+
+const initialState = {
   basics: {
     name: 'John Doe',
     label: 'Programmer',
@@ -9,20 +11,20 @@ export default {
     summary: 'A summary of John Doe…',
     location: {
       address: '2712 Broadway St',
-      postalCode: 'CA 94115',
-      city: 'San Francisco',
-      countryCode: 'US',
-      region: 'California',
+      // postalCode: 'CA 94115',
+      // city: 'San Francisco',
+      // countryCode: 'US',
+      // region: 'California',
     },
-    profiles: [
-      {
-        id: '1',
-        network: 'Twitter',
-        username: 'john',
-        // url: 'https://twitter.com/john',
-      },
-    ],
   },
+  profiles: [
+    {
+      id: '1',
+      network: 'Twitter',
+      username: 'john',
+      // url: 'https://twitter.com/john',
+    },
+  ],
   work: [
     {
       id: '1',
@@ -394,3 +396,5 @@ export default {
     },
   },
 }
+
+export default initialState

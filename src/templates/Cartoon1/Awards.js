@@ -4,9 +4,7 @@ import { ItemWrapper } from '../../components/ItemWrapper.js'
 import SectionWrapper from '../../components/SectionWrapper.js'
 
 function Awards({ path, style, className }) {
-  const dispatch = useDispatch()
   const stateValue = useSelector(path)
-  const colors = useSelector('metadata.colors')
   const visible = useSelector(`metadata.sections.${path}.visible`)
 
   return (

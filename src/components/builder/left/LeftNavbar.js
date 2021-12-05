@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import ReactTooltip from 'react-tooltip'
 import sections from '../../../data/leftSections'
-import useDarkMode from '../../../hooks/useDarkMode'
 
 function LeftNavbar() {
   return (
@@ -26,7 +25,6 @@ function LeftNavbar() {
 }
 
 function SidebarIcon({ section, place }) {
-  const [darkMode, setDarkMode] = useDarkMode()
   const { t } = useTranslation()
   const { heading, icon: Icon } = section
   return (

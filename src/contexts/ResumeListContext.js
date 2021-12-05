@@ -1,9 +1,8 @@
-import { useEffect, useState, createContext, useContext } from 'react'
-import { find, debounce } from 'lodash'
-import { useNavigate } from 'react-router'
-import { ToastContainer, toast } from 'react-toastify'
+import { debounce, find } from 'lodash'
+import { createContext, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { set } from 'draft-js/lib/DefaultDraftBlockRenderMap'
+import { useNavigate } from 'react-router'
+import { toast } from 'react-toastify'
 import { ResumeUniqueIdContext } from '../contexts/ResumeUniqueIdContext'
 import initialState from '../data/initialState'
 

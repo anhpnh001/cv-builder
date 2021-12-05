@@ -3,7 +3,7 @@ import { IoSettingsOutline } from 'react-icons/io5'
 import { MdOutlineColorLens } from 'react-icons/md'
 import { RiFontSize } from 'react-icons/ri'
 
-export default [
+const leftSections = [
   {
     heading: 'templates',
     icon: HiOutlineTemplate,
@@ -37,3 +37,5 @@ export default [
     icon: HiOutlineInformationCircle,
   },
 ]
+
+export default leftSections

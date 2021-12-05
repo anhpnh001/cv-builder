@@ -1,16 +1,8 @@
-import {
-  useEffect,
-  useState,
-  useContext,
-  createContext,
-  useReducer,
-  useCallback,
-} from 'react'
+import { clone, get, setWith } from 'lodash'
+import { createContext, useCallback, useContext, useReducer } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { useParams } from 'react-router'
-import { setWith, get, clone } from 'lodash'
-import { ResumeListContext } from './ResumeListContext'
 import initialState from '../data/initialState'
+import { ResumeListContext } from './ResumeListContext'
 
 const ResumeContext = createContext()
 function ResumeProvider({ children }) {

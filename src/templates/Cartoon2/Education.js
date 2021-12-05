@@ -1,12 +1,10 @@
-import { useDispatch, useSelector } from '../../contexts/ResumeContext.js'
 import InlineToolbarEditor from '../../components/InlineToolbarEditor'
 import { ItemWrapper } from '../../components/ItemWrapper.js'
 import SectionWrapper from '../../components/SectionWrapper.js'
+import { useDispatch, useSelector } from '../../contexts/ResumeContext.js'
 
 function Education({ path, style, className }) {
-  const dispatch = useDispatch()
   const stateValue = useSelector(path)
-  const colors = useSelector('metadata.colors')
   const visible = useSelector(`metadata.sections.${path}.visible`)
 
   return (
@@ -35,20 +33,6 @@ function Education({ path, style, className }) {
 function Details({ path, index }) {
   const detailsValue = useSelector(`metadata.sections.${path}.details`)
   const colors = useSelector('metadata.colors')
-  const detailsComponent = {
-    institution: (
-      <InlineToolbarEditor
-        path={`${path}[${index}].institution`}
-        className="text-lg"
-      />
-    ),
-    area: (
-      <InlineToolbarEditor
-        path={`${path}[${index}].area`}
-        className="text-sm mb-4"
-      />
-    ),
-  }
 
   return (
     <div className="flex gap-4">
