@@ -1,0 +1,349 @@
+{
+  "shared": {
+    "appName": "BetterCV",
+    "shortDescription": "Web tạo CV với mã nguồn mở.",
+    "forms": {
+      "name": "Tên",
+      "title": "Tiêu đề",
+      "subtitle": "Phụ đề",
+      "required": "Yêu cầu",
+      "website": "Website",
+      "date": "Ngày",
+      "present": "Hiện tại",
+      "position": "Vị trí",
+      "startDate": "Ngày bắt đầu",
+      "endDate": "Ngày kết thúc",
+      "address": "Địa chỉ",
+      "phone": "Số điện thoại",
+      "email": "Email",
+      "summary": "Tóm tắt",
+      "markdown": "Khối văn bản này hỗ trợ <1>markdown</1>.",
+      "contact": "Liên hệ",
+      "validation": {
+        "min": "Xin vui lòng nhập ít nhất {{number}} kí tự.",
+        "dateRange": "Ngày kết thúc phải sau ngày bắt đầu.",
+        "email": "Phải là một địa chỉ email hợp lệ.",
+        "required": "Yêu cầu một trường hợp lệ.",
+        "url": "Phải là một địa chỉ URL hợp lệ."
+      }
+    },
+    "buttons": {
+      "add": "Thêm",
+      "edit": "Chỉnh sửa",
+      "cancel": "Hủy",
+      "delete": "Xóa",
+      "loading": "Loading...",
+      "confirmation": "Bạn chắc chứ?",
+      "login": "Đăng nhập",
+      "logout": "Đăng xuất"
+    }
+  },
+  "landing": {
+    "greeting": "Tạo mới CV ngay!",
+    "slogan": "Tất cả những gì bạn cần làm là chỉnh sửa chúng",
+    "hero": {
+      "goToApp": "Đi tới ứng dụng"
+    },
+    "features": [
+      {
+        "heading": "Giao diện thân thiện",
+        "text": "Tiêu chí hàng đầu khi xây dựng trang web của chúng tôi là giao diện thân thiện với người dùng, dễ tiếp cận và dễ để sử dụng."
+      },
+      {
+        "heading": "Các mẫu CV đa dạng",
+        "text": "Chúng tôi đã nghiên cứu và tạo ra vô vàn những mẫu CV đa dạng như về màu sắc, bố cục,... thứ có thể phụ hợp với công việc của bạn."
+      },
+      {
+        "heading": "Có thể tùy chỉnh sâu",
+        "text": "Bạn có thể tùy chỉnh các mẫu CV theo sở thích và phong cách cá nhân ví dụ như tùy chỉnh kích cỡ của văn bản, phông chữ, màu sắc,... và nhiều thứ khác."
+      }
+    ],
+    "steps": [
+      {
+        "heading": "Lựa chọn mẫu",
+        "text": "Ở đây, chúng tôi có vô vàn sự lựa chọn cho bạn về các mẫu CV. Hãy tự mình lựa một mẫu bạn ưng ý và liên quan đến công việc bạn chọn."
+      },
+      {
+        "heading": "Tùy chỉnh mẫu",
+        "text": "Bạn có thể tùy chỉnh thêm các chi tiết trong CV như bố cục, màu sắc, kích thước văn bản... để có thể phù hợp với tính cách của bạn."
+      },
+      {
+        "heading": "Điền vào CV",
+        "text": "Chỉ cần điền vào thông tin của bạn, Các thông tin này sẽ được lưu trữ trong thời gian thực ở kho dữ liệu của chúng tôi."
+      },
+      {
+        "heading": "Tải xuống!",
+        "text": "Tất nhiên, nó hoàn toàn miễn phí! Bạn không cần phải trả bất kỳ chi phí nào khi đã hoàn thành CV của mình. Việc của bạn chỉ cần nhấp vào nút Tải xuống và nộp đơn xin việc."
+      }
+    ],
+    "buttons": {
+      "viewMore": "Xem thêm"
+    }
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "createResume": "Tạo CV",
+    "editResume": "Chỉnh sửa CV",
+    "lastUpdated": "Chỉnh sửa lần cuối lúc {{timestamp}}",
+    "toasts": {
+      "trashed": "{{name}} đã được vào thùng rác",
+      "deleted": "Đã xóa thành công {{name}}"
+    },
+    "buttons": {
+      "duplicate": "Tạo bản sao",
+      "rename": "Đổi tên"
+    },
+    "helpText": "Bạn đang bắt đầu tạo mới một CV, trước tiên hãy đặt một cái tên cho nó. Đây có thể là một vai trò mà bạn muốn ứng tuyển, hoặc nếu bạn tạo CV cho một người bạn, bạn có thể gọi nó là Anh's CV."
+  },
+  "builder": {
+    "tour": [
+      "Nhấn vào đây để có thể đặt tên cho CV của bạn",
+      "Chọn mẫu CV bạn ưng ý và thiết lập các thông số bạn muốn",
+      "Nhấn vào đây để có thể chỉnh sửa hoặc thêm những thông tin cá nhân của bạn",
+      "Khi tất cả đã xong, bạn chỉ cần nhấn vào đây để tải về"
+    ],
+    "hints": {
+      "work": [
+        "Chuyển đổi các vị trí xung quanh CV nếu một số kinh nghiệm cụ thể phù hợp hơn với vị trí mà bạn đang ứng tuyển.",
+        "Bao gồm khoảng 2 - 4 kinh nghiệm làm việc liên quan đến vị trí bạn đang ứng tuyển.",
+        "Hoặc nếu bạn chưa có nhiều kinh nghiệm, hãy chú trọng vào phần học vấn, dự án, kỹ năng.",
+        "Bạn cần viết kinh nghiệm làm việc hiện tại của bạn sẽ làm bạn trở thành ứng viên lý tưởng cho vị trí như thế nào.",
+        "Điều quan trọng là các công việc bạn liệt kê không mơ hồ hoặc quá chung chung, bạn phải cụ thể về những công việc bạn đã làm."
+      ],
+      "education": [
+        "Bạn nên bao gồm những trường học và những khóa học đã học có liên quan đến vị trí bạn ứng tuyển.",
+        "Bao gồm các khóa học có liên quan đến mục tiêu nghề nghiệp của bạn hoặc liên quan đến thông báo tuyển dụng.",
+        "Đừng cố gắng làm sai hoặc làm giả trình độ học vấn của mình, sẽ sớm có người nhận ra nó đấy!"
+      ],
+      "skills": [
+        "Bạn nên đọc thông báo tuyển dụng thật Kỹ để biết nhà tuyển dụng cần những kỹ năng gì trước khi điền vào mục này",
+        "Trước tiên bạn nên điền vào các kỹ năng cụ thể bạn cần cho công việc bạn đang ứng tuyển.",
+        "Nếu bạn không bao gồm một phần dành riêng cho Kỹ năng mềm, hãy đề cập đến chúng ở đây (ví dụ: Động lực bản thân, Giao tiếp, Quản lý thời gian, Tính linh hoạt, v.v.).",
+        "Sử dụng các kỹ năng dành riêng cho ngành trong CV của bạn sẽ giúp bạn vượt qua hệ thống theo dõi ứng viên (ATS).",
+        "Hãy tìm trên internet những kỹ năng cần thiết nhất trong ngành mà bạn đang ứng tuyển và liệt kê chúng vào CV nếu bạn nghĩ rằng bạn có chúng."
+      ],
+      "languages": [
+        "Bao gồm các ngôn ngữ bạn biết và mức độ hiểu biết của bạn. Việc biết một ngôn ngữ không phổ biến có thể giúp bạn nổi bật hơn so với các ứng viên khác."
+      ],
+      "projects": [
+        "Cố gắng bao gồm khoảng 3-4 dự án phù hợp nhất mà bạn đã làm việc.",
+        "Liệt kê tên của dự án và mô tả ngắn gọn về nội dung của nó và các kỹ năng bạn đã có được hoặc phát triển khi bạn làm nó.",
+        "Đừng hãy chỉ viết ra tên dự án, thay vào đó bạn nên viết một tóm tắt về nội dung dự án, những kiến thức bạn đã áp dụng hoặc những kỹ năng đã học được"
+      ],
+      "organizations": [
+        "Bạn nên tránh đề cập đến các tổ chức chỉ ra đảng phái tôn giáo, chính trị, dân tộc hoặc chủng tộc.",
+        "Nếu bạn đã có một vị trí trong một tổ chức thì hãy tự hỏi bản thân: bạn đã hoàn thành được những gì và tổ chức thu được lợi ích gì từ sự tham gia của bạn?",
+        "Đảm bảo bạn điền tên đúng và đầy đủ của tổ chức vì chúng có thể được sử dụng làm từ khóa khi công ty đang tìm kiếm ứng viên tiềm năng."
+      ],
+      "awards": [
+        "Bao gồm các chứng nhận và giấy phép mà bạn có và có thể tăng thêm giá trị cho công ty.",
+        "Hãy nhớ rằng trong một số ngành nghề, các chứng chỉ có trọng lượng ngang với bằng cấp học thuật.",
+        "Đối với mỗi chứng chỉ bao gồm cả tổ chức chứng nhận cũng như loại, lĩnh vực chuyên môn, và ngày nhận được."
+      ],
+      "interests": [
+        "Liệt kê những sở thích của bạn trong trường hợp chúng trùng với công việc / vị trí đang ứng tuyển. Bạn sẽ có thể chứng minh và nói về sở thích của mình nếu cần.",
+        "Ví dụ, nếu sở thích bạn liệt kê là \"đọc sách\", bạn nên chuẩn bị để nói về ba bốn cuốn sách cuối cùng bạn đọc.",
+        "Một trong những cách tốt nhất để thu hút sự chú ý của nhà tuyển dụng là bao gồm thông tin liên quan về các hoạt động và sở thích của bạn ngoài công việc.",
+        "Bất kỳ sở thích và hoạt động nào đều có thể liên quan đến chuyên môn và chúng có thể thể hiện tiềm năng lãnh đạo, làm việc nhóm và kinh nghiệm của bạn.",
+        "Nếu bạn là sinh viên lần đầu tiên gửi CV, các hoạt động trong CV của bạn có thể bao gồm các hoạt động tham gia cộng đồng, thể thao hoặc tham gia các sự kiện.",
+        "Nếu bạn là một công nhân lớn tuổi, hãy bao gồm những sở thích chỉ có lợi cho công việc mà bạn đang ứng tuyển."
+      ]
+    },
+    "toasts": {
+      "created": "{{name}} đã được tạo",
+      "formErrors": "Bạn cần điền hết các ô trước khi có thể gửi biểu mẫu",
+      "doesNotExist": "Biểu mẫu bạn đang tìm không còn nữa rồi... Hoặc nó chưa từng tồn tại nhỉ?",
+      "loadDemoData": "Không biết bắt đầu từ đâu? Hãy thử xem những dữ liệu mẫu để xem BetterCV phải cung cấp gì.",
+      "printError": "Chức năng đám mây hiện đang gặp sự cố, hãy thử lại sau hoặc bạn có thể dùng tính năng in của trình duyệt."
+    },
+    "sections": {
+      "heading": "Tiêu đề",
+      "basics": "Thông tin cơ bản",
+      "profile": "Hồ sơ",
+      "social": "Mạng xã hội",
+      "objective": "Mục tiêu",
+      "work": "Kinh nghiệm làm việc",
+      "education": "Trình độ học vấn",
+      "project": "Dự án",
+      "projects": "Các dự án",
+      "award": "Giải thưởng",
+      "awards": "Các giải thưởng",
+      "certification": "Bằng chứng nhận",
+      "certifications": "Các bằng chứng nhận",
+      "skill": "Kĩ năng",
+      "skills": "Các kĩ năng",
+      "interests": "Sở thích",
+      "hobbies": "Các sở thích",
+      "language": "Ngôn ngữ",
+      "languages": "Các ngôn ngữ",
+      "reference": "Liên hệ",
+      "references": "Các mối liên hệ",
+      "templates": "Các mẫu",
+      "layout": "Bố cục",
+      "colors": "Màu sắc",
+      "font-size": "Cỡ chữ",
+      "fonts": "Phông chữ",
+      "actions": "Hành động",
+      "settings": "Cài đặt",
+      "about": "Thông tin"
+    },
+    "profile": {
+      "photograph": "Ảnh",
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "birthDate": "Ngày tháng năm sinh",
+      "address": {
+        "line1": "Địa chỉ 1",
+        "line2": "Địa chỉ 2",
+        "city": "Thành phố",
+        "pincode": "Mã bưu điện"
+      }
+    },
+    "social": {
+      "network": "Mạng xã hội",
+      "username": "Tên người dùng",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Công ty"
+    },
+    "education": {
+      "institution": "Tổ chức",
+      "field": "Chuyên ngành",
+      "degree": "Bằng cấp",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Loại giải thưởng"
+    },
+    "certifications": {
+      "issuer": "Loại chứng chỉ"
+    },
+    "skills": {
+      "level": "Cấp độ"
+    },
+    "languages": {
+      "fluency": "Mức độ thông thạo"
+    },
+    "layout": {
+      "block": "Khối",
+      "reset": "Đặt lại bố cục",
+      "text": "Mẫu này hỗ trợ {{count}} khối."
+    },
+    "colors": {
+      "primary": "Màu chính",
+      "secondary": "Màu phụ",
+      "heading": "Màu tiêu đề",
+      "text": "Màu chữ",
+      "background": "Màu phông nền"
+    },
+    "actions": {
+      "import": {
+        "heading": "Nhập hồ sơ của bạn",
+        "text": "Bạn có thể nhập thông tin của mình từ nhiều nguồn khác nhau như JSON Resume hoặc LinkedIn của bạn để tự động điền hầu hết dữ liệu cho sơ yếu lý lịch của bạn.",
+        "button": "Nhập"
+      },
+      "export": {
+        "heading": "Xuất CV của bạn",
+        "text": "Xuất sơ yếu lý lịch của bạn dưới dạng PDF để chia sẻ với các nhà tuyển dụng hoặc dạng JSON mà bạn có thể nhập lại vào ứng dụng này trên một máy tính khác.",
+        "button": "Xuất"
+      },
+      "share": {
+        "heading": "Chia sẻ CV của bạn",
+        "text": "Liên kết dưới đây sẽ có thể truy cập công khai nếu bạn chọn chia sẻ nó, người xem sẽ thấy phiên bản sơ yếu lý lịch mới nhất của bạn bất cứ lúc nào."
+      },
+      "loadDemoData": {
+        "text": "Không biết phải làm gì với một CV mới? Hãy thử tải dữ liệu demo để xem CV trông như thế nào và bạn có thể bắt đầu chỉnh sửa từ đó.",
+        "button": "Load Demo Data"
+      },
+      "resetEverything": {
+        "text": "Cuộc đời bạn có quá nhiều sai lầm và đây là một trong số đó? Hãy thử xóa tất cả chỉ với một nút bấm, hãy cẩn thận nếu bạn chưa sao lưu",
+        "button": "Đặt lại tất cả"
+      }
+    },
+    "settings": {
+      "theme": "Chủ đề",
+      "language": "Ngôn ngữ",
+      "translate": "Nếu bạn muốn đóng góp bằng cách cung cấp bản dịch sang ngôn ngữ của bạn, <1> Hãy truy cập vào địa chỉ này </1>.",
+      "dangerZone": {
+        "heading": "Vùng nguy hiểm",
+        "text": "Nếu bạn muốn xóa hoàn toàn tài khoản cũng như tất cả các CV của bạn, chỉ cần nhấn vào nút này. Lưu ý rằng đây là quá trình không thẻ đảo ngược.",
+        "button": "Xóa tài khoản"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Ủng hộ cho BetterCV",
+        "text": "Mình đã cố làm những gì mình có thể, và nếu bạn thấy ứng dụng này hữu ích, hoặc bạn đang ở một vị trí tốt hơn những người khác phụ thuộc vào dự án này cho công việc đầu tiên của họ, <1>Bạn có thể ủng hộ để mình có thể sống qua ngày</1> :)",
+        "button": "Ủng hộ mình một tách cà phê!"
+      },
+      "bugFeature": {
+        "heading": "Lỗi? Yêu cầu chỉnh sửa",
+        "text": "Gặp khó khăn khi làm CV? Tìm thấy lỗi và nó không chịu hết? Hãy nói về nó ở mục GitHub Issues sử dụng các hành động bên dưới.",
+        "button": "Đặt vấn đề"
+      },
+      "appreciate": {
+        "heading": "Yêu thích BetterCV?",
+        "text": "Mình luôn muốn lắng nghe người dùng nói về sự hữu ích của ứng dụng này. Đừng ngần ngại khi bạn có thể liên lạc với mình ."
+      },
+      "sourceCode": {
+        "heading": "Mã nguồn",
+        "text": "Bạn muốn chạy dự án từ nguồn của nó? Bạn có phải là nhà phát triển và sẵn sàng đóng góp vào sự phát triển mã nguồn mở của dự án này không? Nhấp vào nút bên dưới.",
+        "button": "GitHub Repo"
+      },
+      "footer": "Designed with Love by <1>Hoàng Anh</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Tải ảnh lên",
+      "backToDashboard": "Quay lại trang quản lý"
+    },
+    "emptyList": "Danh sách này rỗng."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Bạn tên gì?",
+      "welcome": "Chào, {{name}}!",
+      "loggedOutText": "BetterCV cần biết bạn là ai để có thể xác thực khi bạn truy cập và chỉ hiển thị thông tin của bạn. Khi bạn đã vào, bạn có thể bắt đầu tạo CV, chỉnh sửa và thêm vào những kĩ năng mới hoặc có thể chia sẻ nó với mọi người",
+      "loggedInText": "Tuyết vời. Giờ bạn đã được xác thực, chúng tôi có thể tiếp tục với lý do thực sự mà bạn ở đây. Nhấp vào nút Đi tới Ứng dụng để bắt đầu xây dựng sơ yếu lý lịch của bạn!",
+      "buttons": {
+        "google": "Đặng nhập bằng Google",
+        "anonymous": "Đăng nhập ẩn danh"
+      }
+    },
+    "import": {
+      "button": "Chọn mục",
+      "reactiveResume": {
+        "heading": "Nhập vào từ BetterCV",
+        "text": "BetterCV có định dạng lược đồ riêng để tận dụng tối đa tất cả các khả năng tùy chỉnh mà nó cung cấp. Nếu bạn muốn nhập bản sao lưu CV của mình được tạo bằng ứng dụng này, chỉ cần tải tệp lên bằng nút bên dưới."
+      },
+      "jsonResume": {
+        "heading": "Nhập từ JSON Resume",
+        "text": "JSON Resume là một tiêu chuẩn mở cho cấu trúc giản đồ sơ yếu lý lịch. Nếu bạn là một trong số những người đam mê đã chuẩn bị sẵn hồ sơ xin việc ở định dạng này, bạn chỉ cần một cú nhấp chuột để bắt đầu với BetterCV."
+      },
+      "linkedIn": {
+        "heading": "Import from LinkedIn",
+        "text": "Bạn có thể nhập JSON đã được xuất từ LinkedIn bằng cách nhấp vào nút bên dưới và chọn tệp thích hợp."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Sử dụng Hộp thoại In của Trình duyệt",
+        "text": "Với những ai muốn một giải pháp nhanh chóng, Bạn có thể sử dụng chính trình duyệt của mình. Tất cả những gì bạn phải làm là nhấn Ctrl / Cmd + P và mở hộp thoại in trên trình duyệt của bạn và in CV ngay.",
+        "button": "In CV"
+      },
+      "downloadPDF": {
+        "heading": "Tải dạng PDF",
+        "text": "Những tùy chọn này cho phép bạn in một trang duy nhất, hoàn hảo cho những người có nhiều nội dung. Ngoài ra, bạn cũng có thể tải xuống phiên bản nhiều trang của sơ yếu lý lịch của mình chỉ với một cú nhấp chuột.",
+        "buttons": {
+          "single": "Tải một trang",
+          "multi": "Tải nhiều trang"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Xuất dưới dạng JSON",
+        "text": "Bạn cũng có thể xuất dữ liệu của mình sang định dạng JSON để lưu giữ an toàn để bạn có thể dễ dàng nhập lại dữ liệu vào BetterCV bất cứ khi nào bạn muốn chỉnh sửa hoặc tạo một sơ yếu lý lịch.",
+        "button": "Xuất dưới dạng JSON"
+      }
+    }
+  }
+}
