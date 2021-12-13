@@ -29,7 +29,7 @@ function Basic({}, ref) {
       >
         <section
           style={{ backgroundColor: colors.primary }}
-          className="px-8 py-16 z-10 col-span-2 space-y-6 flex flex-col"
+          className="px-8 py-16 col-span-2 space-y-6 flex flex-col"
         >
           <Avatar
             path="basics.image"
@@ -40,7 +40,7 @@ function Basic({}, ref) {
           <Languages path="languages" />
           <Interests path="interests" />
         </section>
-        <section className="px-8 py-16 z-10 col-span-3 space-y-6">
+        <section className="px-8 py-16 col-span-3 space-y-6">
           <div className="space-y-3 px-4">
             <InlineToolbarEditor
               path="basics.name"

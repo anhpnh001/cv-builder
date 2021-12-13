@@ -135,6 +135,10 @@ const initialState = {
     language: '',
     template: 'Cartoon1',
     thumbnail: '/assets/img/templates/cartoon1.jpg',
+    layout: [
+      ['work', 'education', 'projects', 'awards'],
+      ['profiles', 'skills', 'languages', 'interests'],
+    ],
     sections: {
       // basics: {
       //   heading: 'Basics',

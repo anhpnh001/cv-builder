@@ -17,7 +17,7 @@ function Content() {
   const dispatch = useDispatch()
   const name = useSelector('metadata.name')
   const template = useSelector('metadata.template')
-  const [isTourOpen, setIsTourOpen] = useLocalStorage('isTourOpen', true)
+  const [showTour, setShowTour] = useLocalStorage('show-tour', true)
   const { getResume } = useContext(ResumeListContext)
   const resumeRef = useRef()
   const Template = templateOptions.find((option) => option.name === template)
@@ -52,7 +52,7 @@ function Content() {
   })
 
   const closeTour = () => {
-    setIsTourOpen(false)
+    setShowTour(false)
   }
   return (
     <section className="flex h-screen">
@@ -69,7 +69,7 @@ function Content() {
       </section>
       <Tour
         steps={steps}
-        isOpen={isTourOpen}
+        isOpen={showTour}
         onRequestClose={closeTour}
         rounded={10}
         showNavigationNumber={false}

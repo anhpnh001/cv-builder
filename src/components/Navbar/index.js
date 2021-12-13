@@ -35,7 +35,7 @@ function Navbar() {
   })
 
   return (
-    <nav className="z-50 h-24 flex fixed top-0 inset-x-0 bg-white bg-opacity-75 dark:bg-black transition">
+    <nav className="z-50 h-24 flex sticky top-0 inset-x-0 bg-white bg-opacity-75 dark:bg-black transition">
       <div className="container flex justify-between mx-auto">
         <div className="flex items-center">
           <Link

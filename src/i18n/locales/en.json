@@ -240,6 +240,7 @@
       "background": "Background Color"
     },
     "actions": {
+      "setName": "Enter your CV's name",
       "import": {
         "heading": "Import Your Resume",
         "text": "You can import your information from various sources like JSON Resume or your LinkedIn to autofill most of the data for your resume.",

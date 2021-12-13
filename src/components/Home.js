@@ -23,23 +23,25 @@ function Home() {
   const { createResume } = useContext(ResumeListContext)
   return (
     <>
-      <Navbar />
-      <main className="overscroll-contain mx-auto flex-grow flex flex-col space-y-16">
-        <section className="min-h-screen flex flex-col justify-center items-center text-center container space-y-6">
-          <h1 className="text-gray-900 font-serif font-bold text-8xl capitalize dark:text-gray-100 tracking-tight">
-            {t('landing.greeting')}
-          </h1>
-          <p className="text-xl dark:text-gray-300">
-            - {t('landing.slogan')} -
-          </p>
-          <button
-            onClick={createResume}
-            className="hover:shadow-xl transition bg-blue-600 text-lg font-medium rounded-xl text-white px-6 py-3"
-          >
-            {t('landing.buttons.createCV')}
-          </button>
+      <main className="overscroll-contain w-full flex-grow flex flex-col">
+        <section className="min-h-screen flex flex-col">
+          <Navbar />
+          <section className="flex flex-col justify-center items-center container mx-auto space-y-6 flex-grow">
+            <h1 className="text-gray-900 font-serif font-bold text-8xl capitalize dark:text-gray-100 tracking-tight">
+              {t('landing.greeting')}
+            </h1>
+            <p className="text-xl dark:text-gray-300">
+              - {t('landing.slogan')} -
+            </p>
+            <button
+              onClick={createResume}
+              className="hover:shadow-xl transition bg-blue-600 text-lg font-medium rounded-xl text-white px-6 py-3"
+            >
+              {t('landing.buttons.createCV')}
+            </button>
+          </section>
         </section>
-        <section className="min-h-screen justify-center items-center container flex gap-12">
+        {/* <section className="min-h-screen justify-center items-center container flex gap-12">
           <div className="w-1/2 flex justify-end">
             <div
               style={{ width: '480px', height: '320px' }}
@@ -90,14 +92,14 @@ function Home() {
               )
             )}
           </div>
-        </section>
-        <section className="min-h-screen flex flex-col justify-center items-center gap-12">
-          {/* <div className="flex flex-col items-center">
+        </section> */}
+        {/* <section className="min-h-screen flex flex-col justify-center items-center gap-12">
+          <div className="flex flex-col items-center">
             <h3 className="text-3xl font-bold font-serif tracking-tight mb-2">
               Resume Templates for Every Career Path.
             </h3>
             <span className="inline-block bg-blue-600 w-24 h-2 rounded-full"></span>
-          </div> */}
+          </div>
           <section className="flex justify-center items-center gap-6">
             <div className="hover:shadow-2xl border transition rounded-xl overflow-hidden w-48 h-64">
               <img
@@ -145,12 +147,12 @@ function Home() {
           </button>
         </section>
         <section className="min-h-screen container w-4/5 mx-auto flex flex-col justify-center items-center">
-          {/* <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center">
             <h3 className="text-3xl font-bold font-serif tracking-tight mb-2">
               Build Your Resume Fast and Easy.
             </h3>
             <span className="inline-block bg-blue-600 w-24 h-2 rounded-full"></span>
-          </div> */}
+          </div>
           <div className="grid grid-cols-2 gap-8">
             {t('landing.steps', { returnObjects: true }).map((step, index) => (
               <div className="flex flex-col items-center space-y-4">
@@ -162,9 +164,9 @@ function Home() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

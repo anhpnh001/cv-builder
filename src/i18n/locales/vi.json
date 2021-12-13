@@ -75,6 +75,7 @@
     ],
     "buttons": {
       "create": "Tạo mới",
+      "createCV": "Tạo mới CV",
       "about": "Về chúng tôi",
       "viewMore": "Xem thêm"
     }
@@ -239,6 +240,7 @@
       "background": "Màu phông nền"
     },
     "actions": {
+      "setName": "Nhập tên CV của bạn",
       "import": {
         "heading": "Nhập hồ sơ của bạn",
         "text": "Bạn có thể nhập thông tin của mình từ nhiều nguồn khác nhau như JSON Resume hoặc LinkedIn của bạn để tự động điền hầu hết dữ liệu cho sơ yếu lý lịch của bạn.",

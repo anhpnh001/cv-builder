@@ -21,15 +21,7 @@ function ResumeList() {
   return (
     <>
       <Navbar />
-      <main className="container mx-auto flex-grow flex flex-col">
-        <section className="text-center py-12">
-          <h1 className="text-gray-900 font-serif font-bold text-4xl mb-2 dark:text-gray-100">
-            Let's build your CV!
-          </h1>
-          <p className="text-lg dark:text-gray-300">
-            - All you need to do is just edit -
-          </p>
-        </section>
+      <main className="py-8 container mx-auto flex-grow flex flex-col">
         <Link
           to="/editor/trash"
           className="group relative flex items-center justify-center w-16 h-16 mb-8 bg-gray-200 rounded-lg shadow-inner"

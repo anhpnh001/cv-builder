@@ -2,8 +2,9 @@ import i18next from 'i18next'
 import { useEffect, useState } from 'react'
 import { SketchPicker } from 'react-color'
 import { useTranslation } from 'react-i18next'
-import { HiDownload, HiOutlineChevronLeft } from 'react-icons/hi'
+import { HiDownload } from 'react-icons/hi'
 import { IoWarning } from 'react-icons/io5'
+import { BiLayout } from 'react-icons/bi'
 import { Element } from 'react-scroll'
 import Select from 'react-select'
 import { useDispatch, useSelector } from '../../../contexts/ResumeContext'
@@ -268,17 +269,23 @@ function LeftSidebar({ onExportPDF }) {
   return (
     <section className="flex flex-col rounded-3xl border-l w-80 h-full px-4">
       <div className="flex-none h-20 space-x-4 border-b flex items-center">
-        <button className="flex-none bg-gray-200 w-9 h-9 rounded-xl flex justify-center items-center">
-          <HiOutlineChevronLeft size="18" className="text-gray-500" />
-        </button>
-        <span className="flex-grow text-xl font-medium" data-tut="first-step">
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => handleChangeName(e.target.value)}
-            className="bg-transparent w-full outline-none"
-          />
-        </span>
+        <div
+          data-tut="first-step"
+          className="flex items-center border rounded-lg overflow-hidden"
+        >
+          <div className="flex-none bg-gray-200 w-9 h-9 flex justify-center items-center">
+            <BiLayout size="18" className="text-gray-500" />
+          </div>
+          <span className="flex-grow text-lg font-medium">
+            <input
+              type="text"
+              value={name}
+              placeholder={t('builder.actions.setName')}
+              onChange={(e) => handleChangeName(e.target.value)}
+              className="px-4 bg-transparent w-full outline-none"
+            />
+          </span>
+        </div>
       </div>
       <div
         className="flex-grow h-full px-2 py-4 space-y-4 overflow-y-auto scrollbar-none"

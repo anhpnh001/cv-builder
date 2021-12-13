@@ -1,6 +1,7 @@
 import Cartoon1 from '../templates/Cartoon1'
 import Cartoon2 from '../templates/Cartoon2'
 import Basic from '../templates/Basic'
+import Simple1 from '../templates/Simple1'
 
 export default [
   {
@@ -17,5 +18,10 @@ export default [
     name: 'Basic',
     thumbnail: '/assets/img/templates/basic.jpg',
     component: Basic,
+  },
+  {
+    name: 'Simple',
+    thumbnail: '/assets/img/templates/basic.jpg',
+    component: Simple1,
   },
 ]
