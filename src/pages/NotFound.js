@@ -10,7 +10,7 @@ function NotFound() {
       <div>
         <Link to="/" className="mb-4 flex items-center space-x-2">
           <HiOutlineDocumentDuplicate className="text-5xl text-blue-600" />
-          <span className="text-3xl font-serif text-black dark:text-gray-100 font-bold">
+          <span className="text-3xl text-black dark:text-gray-100 font-bold">
             BetterCV
           </span>
         </Link>
@@ -36,13 +36,13 @@ function NotFound() {
         <div className="flex font-bold">
           <button
             onClick={createResume}
-            className="hover:shadow-xl transition bg-blue-500 text-lg font-medium rounded-xl text-white px-6 py-3"
+            className="hover:shadow-xl transition bg-blue-600 text-lg font-medium rounded-xl text-white px-6 py-3"
           >
             Create Resume
           </button>
           <Link
             to="/"
-            className="text-blue-500 text-lg font-medium rounded-xl px-6 py-3"
+            className="text-blue-600 text-lg font-medium rounded-xl px-6 py-3"
           >
             Back to Homepage
           </Link>

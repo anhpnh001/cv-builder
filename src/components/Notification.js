@@ -6,7 +6,7 @@ function Notification({ message, type, duration, onClick }) {
       {/* <HiOutlineTrash size="24" className="text-gray-400" /> */}
       <div className="flex justify-between items-center flex-grow">
         <p className="text-gray-800 font-semibold">{message}</p>
-        <button className="text-blue-500 font-semibold">Undo</button>
+        <button className="text-blue-600 font-semibold">Undo</button>
       </div>
       <HiOutlineX size="24" className="text-gray-400" />
     </div>

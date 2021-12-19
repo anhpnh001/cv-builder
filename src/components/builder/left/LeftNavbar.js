@@ -11,7 +11,7 @@ function LeftNavbar() {
     <section className="w-20 h-full flex flex-col items-center justify-center space-y-4">
       <Link
         to="/"
-        className="border-b w-12 h-20 flex justify-center items-center"
+        className="dark:border-gray-600 border-b border-slate-200 w-12 h-20 flex justify-center items-center"
       >
         <HiOutlineDocumentDuplicate size="36" className="text-blue-600" />
       </Link>
@@ -37,7 +37,7 @@ function SidebarIcon({ section, place }) {
       <div className="flex items-center">
         <div
           data-tip={t(`builder.sections.${heading}`)}
-          className="hover:rounded-lg hover:text-blue-600 hover:bg-blue-50 cursor-pointer text-gray-500 transition duration-500 rounded-full flex justify-center items-center w-12 h-12"
+          className="hover:rounded-lg hover:text-blue-600 hover:bg-blue-50 cursor-pointer text-slate-500 transition duration-500 rounded-full flex justify-center items-center w-12 h-12"
         >
           <Icon size="18" />
         </div>

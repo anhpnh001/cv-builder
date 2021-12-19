@@ -1,9 +1,9 @@
+import { useDispatch, useSelector } from '../../contexts/ResumeContext.js'
 import InlineToolbarEditor from '../../components/InlineToolbarEditor'
 import { ItemWrapper } from '../../components/ItemWrapper.js'
 import BlockWrapper from '../../components/BlockWrapper.js'
-import { useSelector } from '../../contexts/ResumeContext.js'
 
-function Work({ path, style, className, timeline = true }) {
+function Awards({ path, style, className, headingStyle, headingClassName }) {
   const stateValue = useSelector(path)
   const visible = useSelector(`metadata.sections.${path}.visible`)
 
@@ -11,7 +11,11 @@ function Work({ path, style, className, timeline = true }) {
     <>
       {visible && (
         <div style={style} className={className}>
-          <BlockWrapper path={path}>
+          <BlockWrapper
+            path={path}
+            headingStyle={headingStyle}
+            headingClassName={headingClassName}
+          >
             {stateValue.map((item, index) => (
               <ItemWrapper
                 key={index}
@@ -20,12 +24,7 @@ function Work({ path, style, className, timeline = true }) {
                 index={index}
                 single={stateValue.length === 1}
               >
-                <Details
-                  path={path}
-                  item={item}
-                  index={index}
-                  timeline={timeline}
-                />
+                <Details path={path} item={item} index={index} />
               </ItemWrapper>
             ))}
           </BlockWrapper>
@@ -35,42 +34,34 @@ function Work({ path, style, className, timeline = true }) {
   )
 }
 
-function Details({ path, index, timeline }) {
+function Details({ path, item, index }) {
   const detailsValue = useSelector(`metadata.sections.${path}.details`)
   const colors = useSelector('metadata.colors')
 
   return (
     <div className="flex gap-4">
-      {timeline && (
-        <div className="flex flex-col items-center z-10">
-          <span
-            style={{ borderColor: colors.primary }}
-            className="bg-transparent w-5 h-5 rounded-full border-4 inline-block"
-          ></span>
-          <span
-            style={{ backgroundColor: colors.primary }}
-            className="flex-grow w-1 inline-block"
-          ></span>
-        </div>
-      )}
+      <div className="flex flex-col items-center z-10">
+        <span
+          style={{ borderColor: colors.primary }}
+          className="bg-transparent w-5 h-5 rounded-full border-4 inline-block"
+        ></span>
+        <span
+          style={{ backgroundColor: colors.primary }}
+          className="flex-grow w-1 inline-block"
+        ></span>
+      </div>
       <div className="flex-1 min-w-0">
         <div
           style={{ color: colors.primary }}
           className="w-full flex flex-wrap text-sm"
         >
-          {detailsValue.startDate.visible && (
-            <InlineToolbarEditor path={`${path}[${index}].startDate`} />
-          )}
-          {detailsValue.endDate.visible && (
-            <>
-              <span> - </span>
-              <InlineToolbarEditor path={`${path}[${index}].endDate`} />
-            </>
+          {detailsValue.date.visible && (
+            <InlineToolbarEditor path={`${path}[${index}].date`} />
           )}
         </div>
-        {detailsValue.name.visible && (
+        {detailsValue.title.visible && (
           <InlineToolbarEditor
-            path={`${path}[${index}].name`}
+            path={`${path}[${index}].title`}
             className="text-lg"
           />
         )}
@@ -85,4 +76,4 @@ function Details({ path, index, timeline }) {
   )
 }
 
-export default Work
+export default Awards

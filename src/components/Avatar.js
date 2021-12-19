@@ -1,10 +1,11 @@
 import { memo, useRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { BsCloudUpload } from 'react-icons/bs'
-import { IoCrop } from 'react-icons/io5'
+import { BsCheckLg, BsCloudUpload } from 'react-icons/bs'
+import { IoCrop, IoImageOutline } from 'react-icons/io5'
 import ReactCrop from 'react-image-crop'
 import 'react-image-crop/dist/ReactCrop.css'
 import { useDispatch, useSelector } from '../contexts/ResumeContext'
+import Popup from './Popup'
 
 function Avatar({ path, style, className }) {
   const avatarRef = useRef()
@@ -20,11 +21,12 @@ function Avatar({ path, style, className }) {
     `https://avatars.dicebear.com/api/micah/${Math.random()}.svg`
   )
   const [showImageCropDialog, setShowImageCropDialog] = useState(false)
+  const [showPopup, setShowPopup] = useState(false)
   const [src, setSrc] = useState('')
 
   const onUpdate = (croppedImageUrl) => {
     dispatch({
-      type: 'on_input',
+      type: 'on_change',
       payload: {
         path,
         value: croppedImageUrl,
@@ -112,15 +114,64 @@ function Avatar({ path, style, className }) {
 
   const handleCropButton = () => {
     makeClientCrop(crop)
-    setShowImageCropDialog(false)
+    setShowPopup(false)
   }
 
   const handleCancelButton = () => {
     setShowImageCropDialog(false)
   }
+
   return (
     <div style={style} className={className}>
-      {showImageCropDialog && (
+      <Popup show={showPopup} onShowPopup={setShowPopup}>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 bg-white rounded-lg space-y-4">
+          {/* <div className="flex rounded-lg overflow-hidden">
+              <input
+                placeholder="Enter image link..."
+                className="w-full outline-none bg-slate-100 h-10 px-4 text-sm"
+              />
+              <button className="h-10 bg-slate-200 text-sm px-4">
+                <BsCheckLg size={14} className="text-blue-500" />
+              </button>
+            </div> */}
+
+          <div className="border-2 border-dashed border-slate-200 rounded-lg w-96">
+            <div {...getRootProps()} className="">
+              <div className="flex flex-col gap-4 items-center justify-center cursor-pointer py-4">
+                <IoImageOutline size={40} className="text-blue-500" />
+                <p className="text-sm font-semibold text-blue-900">
+                  Drop your image here, or{' '}
+                  <span className="text-blue-500">browse</span>
+                </p>
+              </div>
+              <form ref={avatarRef}>
+                <input {...getInputProps()} />
+              </form>
+            </div>
+            {showImageCropDialog ? (
+              <div className="px-4 pb-4 flex gap-4 flex-col items-center max-h-96">
+                <div className="overflow-y-auto scrollbar-none">
+                  <ReactCrop
+                    src={src}
+                    crop={crop}
+                    ruleOfThirds
+                    onImageLoaded={onImageLoaded}
+                    onComplete={onCropComplete}
+                    onChange={(newCrop) => setCrop(newCrop)}
+                  />
+                </div>
+                <button
+                  onClick={handleCropButton}
+                  className="flex-none bg-blue-100 h-10 w-full rounded-lg font-semibold text-blue-600 text-sm"
+                >
+                  Save
+                </button>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </Popup>
+      {/* {showImageCropDialog && (
         <>
           <section
             onClick={handleCancelButton}
@@ -157,19 +208,12 @@ function Avatar({ path, style, className }) {
             </div>
           </section>
         </>
-      )}
+      )} */}
       <div
-        className="group aspect-w-1 aspect-h-1 relative w-full h-full"
-        {...getRootProps()}
+        className="group aspect-square aspect-h-1 relative w-full h-full"
+        onClick={() => setShowPopup(true)}
       >
-        <form ref={avatarRef}>
-          <input {...getInputProps()} />
-        </form>
-        <div
-          className={`${
-            isDragActive ? 'opacity-100' : 'opacity-0'
-          } z-10 group-hover:opacity-100 cursor-pointer absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 flex justify-center items-center transition`}
-        >
+        <div className="z-10 group-hover:opacity-100 opacity-0 cursor-pointer absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 flex justify-center items-center transition">
           <BsCloudUpload className="text-5xl text-white" />
         </div>
         <img

@@ -17,10 +17,6 @@
   }
 }
 
-#root {
-  @apply min-h-screen bg-white dark:bg-black flex flex-col transition;
-}
-
 div.DraftEditor-root {
   min-width: 2rem;
   @apply hover:border-blue-400 focus:border-blue-400 border-transparent border border-dashed rounded-md;

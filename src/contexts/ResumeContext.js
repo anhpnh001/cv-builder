@@ -11,7 +11,7 @@ function ResumeProvider({ children }) {
     (state, { type, payload }) => {
       let newState
       switch (type) {
-        case 'on_input':
+        case 'on_change':
           console.log(payload)
           newState = setWith(clone(state), payload.path, payload.value, clone)
           debouncedUpdateResume(newState)
@@ -37,7 +37,6 @@ function ResumeProvider({ children }) {
           debouncedUpdateResume(newState)
           return newState
         case 'on_delete_item':
-          console.log('on_delete_item')
           // delete item based on the index
           newState = setWith(clone(state), payload.path, [
             ...get(state, payload.path).slice(0, payload.index),

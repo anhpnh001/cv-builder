@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   HiOutlineDocumentAdd,
@@ -18,27 +18,87 @@ const stepsIcon = [
   HiOutlineDownload,
 ]
 
+const pics = ['8460510_1.png', '7396186_3.png', '6109613_2.png']
+
 function Home() {
   const { t } = useTranslation()
   const { createResume } = useContext(ResumeListContext)
+  const [pic, setPic] = useState(pics[0])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const index = pics.indexOf(pic)
+      if (index === pics.length - 1) {
+        setPic(pics[0])
+      } else {
+        setPic(pics[index + 1])
+      }
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [pic])
+
   return (
     <>
-      <main className="overscroll-contain w-full flex-grow flex flex-col">
+      <main className="min-h-screen transition overscroll-contain w-full flex-grow flex flex-col">
         <section className="min-h-screen flex flex-col">
           <Navbar />
-          <section className="flex flex-col justify-center items-center container mx-auto space-y-6 flex-grow">
-            <h1 className="text-gray-900 font-serif font-bold text-8xl capitalize dark:text-gray-100 tracking-tight">
-              {t('landing.greeting')}
-            </h1>
-            <p className="text-xl dark:text-gray-300">
-              - {t('landing.slogan')} -
-            </p>
-            <button
-              onClick={createResume}
-              className="hover:shadow-xl transition bg-blue-600 text-lg font-medium rounded-xl text-white px-6 py-3"
-            >
-              {t('landing.buttons.createCV')}
-            </button>
+          <section className="relative flex flex-grow items-center container px-8 mx-auto">
+            <section className="lg:flex-row w-full flex flex-col gap-12 justify-between items-center">
+              <section className="space-y-10 flex-none">
+                <h1 className="text-slate-900 font-bold text-5xl capitalize dark:text-gray-100 tracking-tight leading-snug whitespace-pre-line">
+                  {t('landing.greeting')}
+                </h1>
+                <p className="text-slate-500 text-xl dark:text-gray-300 max-w-md leading-normal">
+                  {t('landing.slogan')}
+                </p>
+                <button
+                  onClick={createResume}
+                  className="shadow-lg shadow-blue-600/50 transition bg-blue-600 text-sm font-medium rounded-xl text-white px-10 py-4"
+                >
+                  {t('landing.buttons.createCV')}
+                </button>
+              </section>
+              <section className="flex-grow max-w-screen-md">
+                <img
+                  src={process.env.PUBLIC_URL + '/assets/images/' + pic}
+                  className="w-full h-auto"
+                />
+              </section>
+              {/* <div
+                // style={{ width: '520px' }}
+                className="lg:w-1/3 aspect-3/2 bg-slate-100 flex flex-col border border-slate-200 rounded-lg overflow-hidden"
+              >
+                <div className="bg-white relative w-full h-9 border-b border-slate-200 flex justify-center items-center">
+                  <div className="absolute left-3 space-x-2">
+                    <span className="inline-block w-3 h-3 rounded-full bg-red-500"></span>
+                    <span className="inline-block w-3 h-3 rounded-full bg-yellow-500"></span>
+                    <span className="inline-block w-3 h-3 rounded-full bg-green-500"></span>
+                  </div>
+                  <div className="text-gray-500 rounded-md flex relative justify-center items-center bg-slate-100 w-48 h-6">
+                    <p className="text-xs select-none">localhost:3000</p>
+                    <MdOutlineRefresh size="14" className="absolute right-1" />
+                  </div>
+                </div>
+                <div className="flex-grow flex flex-col py-3 pl-28 pr-3">
+                  <div className="rounded-lg bg-slate-50 border border-slate-200 w-full h-full pt-4 flex-grow flex flex-col overflow-hidden">
+                    <div className="rounded-t-md border-t border-x mx-auto grid w-3/5 h-full grid-cols-3 flex-grow overflow-hidden">
+                      <div className="col-span-1 bg-blue-400 py-4">
+                        <div className="w-3/4 mx-auto aspect-square bg-white rounded-full overflow-hidden">
+                          <img
+                            src={`https://avatars.dicebear.com/api/micah/${Math.random()}.svg`}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-span-2 bg-white px-2 py-4 space-y-3">
+                        <div className="rounded-full w-full h-2 bg-slate-100"></div>
+                        <div className="rounded-full w-3/4 h-2 bg-slate-100"></div>
+                        <div className="rounded-full w-1/2 h-2 bg-slate-100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+            </section>
           </section>
         </section>
         {/* <section className="min-h-screen justify-center items-center container flex gap-12">
@@ -104,7 +164,7 @@ function Home() {
             <div className="hover:shadow-2xl border transition rounded-xl overflow-hidden w-48 h-64">
               <img
                 src={
-                  process.env.PUBLIC_URL + '/assets/img/templates/cartoon1.jpg'
+                  process.env.PUBLIC_URL + '/assets/images/templates/cartoon1.jpg'
                 }
                 className="object-cover w-full h-full"
               />
@@ -112,7 +172,7 @@ function Home() {
             <div className="hover:shadow-2xl border transition rounded-xl overflow-hidden w-52 h-72">
               <img
                 src={
-                  process.env.PUBLIC_URL + '/assets/img/templates/cartoon2.jpg'
+                  process.env.PUBLIC_URL + '/assets/images/templates/cartoon2.jpg'
                 }
                 className="object-cover w-full h-full"
               />
@@ -120,7 +180,7 @@ function Home() {
             <div className="hover:shadow-2xl border transition rounded-xl overflow-hidden w-60 h-80">
               <img
                 src={
-                  process.env.PUBLIC_URL + '/assets/img/templates/cartoon1.jpg'
+                  process.env.PUBLIC_URL + '/assets/images/templates/cartoon1.jpg'
                 }
                 className="object-cover w-full h-full"
               />
@@ -128,7 +188,7 @@ function Home() {
             <div className="hover:shadow-2xl border transition rounded-xl overflow-hidden w-52 h-72">
               <img
                 src={
-                  process.env.PUBLIC_URL + '/assets/img/templates/cartoon2.jpg'
+                  process.env.PUBLIC_URL + '/assets/images/templates/cartoon2.jpg'
                 }
                 className="object-cover w-full h-full"
               />
@@ -136,7 +196,7 @@ function Home() {
             <div className="hover:shadow-2xl border transition rounded-xl overflow-hidden w-48 h-64">
               <img
                 src={
-                  process.env.PUBLIC_URL + '/assets/img/templates/cartoon1.jpg'
+                  process.env.PUBLIC_URL + '/assets/images/templates/cartoon1.jpg'
                 }
                 className="object-cover w-full h-full"
               />

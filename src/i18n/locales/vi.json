@@ -1,7 +1,7 @@
 {
   "shared": {
     "appName": "BetterCV",
-    "shortDescription": "Web tạo CV với mã nguồn mở.",
+    "shortDescription": "Việc Tốt, Lương Cao\n Với BetterCV!",
     "forms": {
       "name": "Tên",
       "title": "Tiêu đề",
@@ -39,8 +39,8 @@
     }
   },
   "landing": {
-    "greeting": "Tạo mới CV ngay!",
-    "slogan": "Tất cả những gì bạn cần làm là chỉnh sửa chúng",
+    "greeting": "Việc Tốt, Lương Cao\n Với BetterCV!",
+    "slogan": "Dễ dàng sử dụng, đa dạng tính năng, thỏa sức sáng tạo. Tất cả những gì bạn cần là chỉnh sửa chúng.",
     "features": [
       {
         "heading": "Giao diện thân thiện",
@@ -249,7 +249,7 @@
       "export": {
         "heading": "Xuất CV của bạn",
         "text": "Xuất sơ yếu lý lịch của bạn dưới dạng PDF để chia sẻ với các nhà tuyển dụng hoặc dạng JSON mà bạn có thể nhập lại vào ứng dụng này trên một máy tính khác.",
-        "button": "Xuất"
+        "button": "Xem Trước & Tải Xuống"
       },
       "share": {
         "heading": "Chia sẻ CV của bạn",
@@ -260,7 +260,6 @@
         "button": "Load Demo Data"
       },
       "resetEverything": {
-        "text": "Cuộc đời bạn có quá nhiều sai lầm và đây là một trong số đó? Hãy thử xóa tất cả chỉ với một nút bấm, hãy cẩn thận nếu bạn chưa sao lưu",
         "button": "Đặt lại tất cả"
       }
     },
@@ -346,6 +345,22 @@
         "heading": "Xuất dưới dạng JSON",
         "text": "Bạn cũng có thể xuất dữ liệu của mình sang định dạng JSON để lưu giữ an toàn để bạn có thể dễ dàng nhập lại dữ liệu vào BetterCV bất cứ khi nào bạn muốn chỉnh sửa hoặc tạo một sơ yếu lý lịch.",
         "button": "Xuất dưới dạng JSON"
+      }
+    },
+    "changeTemplate": {
+      "heading": "Giữ nguyên màu sắc",
+      "text": "Bạn có thể giữ nguyên các màu mà bạn vừa tùy chỉnh, hoặc bạn có thể sử dụng màu mặc định của mẫu.",
+      "buttons": {
+        "keep": "Giữ nguyên",
+        "change": "Thay đổi"
+      }
+    },
+    "resetEverything": {
+      "heading": "Đặt lại tất cả",
+      "text": "Bạn mắc nhiều lỗi trong CV? Hãy thử xóa tất cả chỉ với một nút bấm, hãy cẩn thận nếu bạn chưa sao lưu",
+      "buttons": {
+        "reset": "Đặt lại",
+        "cancel": "Đóng"
       }
     }
   }

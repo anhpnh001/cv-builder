@@ -30,7 +30,7 @@ function InlineToolbarEditor({ path, style, className, toolbar = true }) {
 
   const onUpdate = () => {
     dispatch({
-      type: 'on_input',
+      type: 'on_change',
       payload: {
         path,
         value: JSON.stringify(convertToRaw(editorState.getCurrentContent())),
@@ -147,8 +147,50 @@ function InlineToolbarEditor({ path, style, className, toolbar = true }) {
   return (
     <div
       style={style}
-      className={classNames(className, 'min-w-0 cursor-text relative')}
+      className={classNames(className, 'max-w-full cursor-text relative')}
     >
+      {/* <section className="flex justify-center items-center w-screen h-screen bg-black bg-opacity-80 z-40 fixed top-0 left-0"></section>
+      <section className="z-40 w-80 rounded-3xl overflow-hidden border bg-white fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="flex flex-col px-6 py-8 space-y-6">
+          <p className="font-semibold">Add link</p>
+          <div className="space-y-4 text-gray-600">
+            <div className="border flex items-center rounded-lg overflow-hidden bg-gray-50">
+              <div className="px-2 flex justify-center items-center">
+                <MdAddLink size="24" />
+              </div>
+              <input
+                type="text"
+                placeholder="Enter URL"
+                className="min-w-0 flex-grow py-2 pr-4 outline-none bg-transparent"
+              />
+            </div>
+            <div className="border flex items-center rounded-lg overflow-hidden bg-gray-50">
+              <div className="px-2 flex justify-center items-center">
+                <MdTextFormat size="24" />
+              </div>
+              <input
+                type="text"
+                placeholder="Enter text"
+                className="min-w-0 flex-grow py-2 pr-4 outline-none bg-transparent"
+              />
+            </div>
+          </div>
+          <div className="space-x-4 flex">
+            <button
+              // onClick={handleCancelButtonClick}
+              className="flex-grow h-10 px-8 rounded-full text-blue-600 font-medium"
+            >
+              Cancel
+            </button>
+            <button
+              // onClick={handleCropButtonClick}
+              className="flex-grow bg-blue-100 h-10 px-10 rounded-xl text-blue-600 font-medium"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </section> */}
       {showToolbar && toolbar && (
         <div className="z-20 p-3 space-y-2 rounded-xl shadow-md bg-white border absolute transform -translate-y-2 bottom-full left-0 flex flex-col text-sm">
           <div className="flex py-1 space-x-1 bg-gray-100 rounded-lg justify-center text-gray-500">

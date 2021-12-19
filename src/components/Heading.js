@@ -1,35 +1,20 @@
+import classNames from 'classnames'
 import 'rc-slider/assets/index.css'
-import React, { memo, useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from '../contexts/ResumeContext.js'
+import InlineToolbarEditor from './InlineToolbarEditor.js'
 
 function Heading({ path, style, className }) {
-  const dispatch = useDispatch()
-  const stateValue = useSelector(`metadata.sections.${path}.heading`)
   const colors = useSelector(`metadata.colors`)
-  const [value, setValue] = useState(stateValue)
-
-  const handleChange = (value) => {
-    dispatch({
-      type: 'on_input',
-      payload: {
-        path: `metadata.sections.${path}.heading`,
-        value,
-      },
-    })
-    setValue(value)
-  }
-
-  useEffect(() => {
-    setValue(stateValue)
-  }, [stateValue])
-
+  console.log(className)
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={(e) => handleChange(e.target.value)}
-      style={{ color: colors.heading }}
-      className="bg-transparent outline-none w-full text-2xl font-semibold mb-2"
+    <InlineToolbarEditor
+      path={`metadata.sections.${path}.heading`}
+      style={{ ...style, color: colors.heading }}
+      className={classNames(
+        'text-2xl font-semibold mb-2 inline-block',
+        className
+      )}
     />
   )
 }

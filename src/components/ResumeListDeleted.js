@@ -66,9 +66,7 @@ function ResumeListDeleted() {
                       </div>
                     </div>
                   </div>
-                  <p
-                    className="text-center block font-medium mt-2"
-                  >
+                  <p className="dark:text-slate-100 text-gray-800 text-center block font-medium mt-2">
                     {resume.metadata.name}
                   </p>
                 </div>
@@ -76,7 +74,7 @@ function ResumeListDeleted() {
             })}
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

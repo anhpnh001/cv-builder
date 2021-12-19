@@ -123,8 +123,8 @@ const initialState = {
     },
   ],
   metadata: {
-    name: 'United',
-    font: 'Montserrat',
+    name: 'Untitled',
+    font: 'Open Sans',
     colors: {
       primary: '#3da9fc',
       secondary: '#d8eefe',
@@ -134,45 +134,42 @@ const initialState = {
     },
     language: '',
     template: 'Cartoon1',
-    thumbnail: '/assets/img/templates/cartoon1.jpg',
+    thumbnail: '/assets/images/templates/cartoon1.jpg',
     layout: [
-      ['work', 'education', 'projects', 'awards'],
+      ['basics', 'work', 'education', 'projects', 'awards'],
       ['profiles', 'skills', 'languages', 'interests'],
     ],
     sections: {
-      // basics: {
-      //   heading: 'Basics',
-      //   visible: true,
-      //   details: {
-      //     name: {
-      //       visible: true,
-      //     },
-      //     label: {
-      //       visible: true,
-      //     },
-      //     image: {
-      //       visible: true,
-      //     },
-      //     email: {
-      //       visible: true,
-      //     },
-      //     phone: {
-      //       visible: true,
-      //     },
-      //     url: {
-      //       visible: true,
-      //     },
-      //     summary: {
-      //       visible: true,
-      //     },
-      //     location: {
-      //       visible: true,
-      //     },
-      //     profiles: {
-      //       visible: true,
-      //     },
-      //   },
-      // },
+      basics: {
+        heading: 'Basics',
+        visible: true,
+        details: {
+          name: {
+            visible: true,
+          },
+          label: {
+            visible: true,
+          },
+          // image: {
+          //   visible: true,
+          // },
+          email: {
+            visible: true,
+          },
+          phone: {
+            visible: true,
+          },
+          url: {
+            visible: true,
+          },
+          summary: {
+            visible: true,
+          },
+          location: {
+            visible: true,
+          },
+        },
+      },
       profiles: {
         heading: 'Profiles',
         visible: true,

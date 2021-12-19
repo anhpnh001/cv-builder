@@ -45,12 +45,20 @@ function ResumeListProvider({ children }) {
   }
 
   const createResume = ({ name, template }) => {
-    console.log('createResume', name, template)
     const newResumeId = resumeUniqueId + 1
+
+    const sections = initialState.metadata.sections
+    Object.keys(sections).forEach((key) => {
+      sections[key].heading = t(`builder.sections.${key}`)
+    })
+
     const newResume = {
       ...initialState,
       id: newResumeId,
-      template: template || 'Basic',
+      metadata: {
+        ...initialState.metadata,
+        sections,
+      },
       dateCreated: new Date(),
       dateModified: new Date(),
     }
@@ -58,7 +66,9 @@ function ResumeListProvider({ children }) {
     setResumeList([...resumeList, newResume])
     // Redirect to resumeId
     navigate(`/editor/${newResumeId}`)
-    toast.success(t('builder.toasts.created', { name: newResumeId }))
+    toast.success(
+      t('builder.toasts.created', { name: initialState.metadata.name })
+    )
   }
 
   const updateResume = (resume) => {

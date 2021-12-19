@@ -71,7 +71,7 @@ function ResumeList() {
                   </div>
                   <Link
                     to={`/editor/${resume.id}`}
-                    className="text-center block font-medium mt-2"
+                    className="dark:text-slate-100 text-gray-800 text-center block font-medium mt-2"
                   >
                     {resume.metadata.name}
                   </Link>
@@ -80,7 +80,7 @@ function ResumeList() {
             })}
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

@@ -8,7 +8,7 @@ function SidebarEditor() {
   const onUpdateName = (name) => {
     setResumeData({ ...resumeData, basics: { ...resumeData.basics, name } })
   }
-  console.log(resumeData)
+
   return (
     <>
       {resumeData ? (

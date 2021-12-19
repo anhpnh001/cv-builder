@@ -1,9 +1,9 @@
 import InlineToolbarEditor from '../../components/InlineToolbarEditor'
 import { ItemWrapper } from '../../components/ItemWrapper.js'
 import BlockWrapper from '../../components/BlockWrapper.js'
-import { useSelector } from '../../contexts/ResumeContext.js'
+import { useDispatch, useSelector } from '../../contexts/ResumeContext.js'
 
-function Work({ path, style, className, timeline = true }) {
+function Education({ path, style, className, timeline = true }) {
   const stateValue = useSelector(path)
   const visible = useSelector(`metadata.sections.${path}.visible`)
 
@@ -68,15 +68,15 @@ function Details({ path, index, timeline }) {
             </>
           )}
         </div>
-        {detailsValue.name.visible && (
+        {detailsValue.institution.visible && (
           <InlineToolbarEditor
-            path={`${path}[${index}].name`}
+            path={`${path}[${index}].institution`}
             className="text-lg"
           />
         )}
-        {detailsValue.summary.visible && (
+        {detailsValue.area.visible && (
           <InlineToolbarEditor
-            path={`${path}[${index}].summary`}
+            path={`${path}[${index}].area`}
             className="text-sm mb-4"
           />
         )}
@@ -85,4 +85,4 @@ function Details({ path, index, timeline }) {
   )
 }
 
-export default Work
+export default Education

@@ -18,7 +18,7 @@ function RightNavbar() {
 
 function SidebarIcon({ icon }) {
   return (
-    <div className="hover:rounded-lg hover:text-blue-500 hover:bg-blue-50 cursor-pointer text-gray-700 transition duration-500 rounded-full flex justify-center items-center w-12 h-12">
+    <div className="hover:rounded-lg hover:text-blue-600 hover:bg-blue-50 cursor-pointer text-gray-700 transition duration-500 rounded-full flex justify-center items-center w-12 h-12">
       {icon}
     </div>
   )

@@ -13,12 +13,13 @@ function useDarkMode() {
 
   // If enabledState is defined use it, otherwise fallback to prefersDarkMode.
   // This allows user to override OS level setting on our website.
-  const enabled = typeof enabledState !== 'undefined' ? false : false
+  const enabled =
+    typeof enabledState !== 'undefined' ? enabledState : prefersDarkMode
 
   // Fire off effect that add/removes dark mode class
   useEffect(
     () => {
-      const className = 'dark-mode'
+      const className = 'dark'
       const element = window.document.body
       if (enabled) {
         element.classList.add(className)

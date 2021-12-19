@@ -1,7 +1,7 @@
 {
   "shared": {
-    "appName": "Reactive Resume",
-    "shortDescription": "A free and open source resume builder.",
+    "appName": "BetterCV",
+    "shortDescription": "Better Work, Better Salary\n With BetterCV!",
     "forms": {
       "name": "Name",
       "title": "Title",
@@ -39,8 +39,8 @@
     }
   },
   "landing": {
-    "greeting": "Let's build your CV!",
-    "slogan": "All you need to do is just edit",
+    "greeting": "Better Work, Better Salary\n With BetterCV!",
+    "slogan": "Easy to use, diverse features, unleash your creativity. All you need is just edit.",
     "features": [
       {
         "heading": "Friendly interface",
@@ -249,7 +249,7 @@
       "export": {
         "heading": "Export Your Resume",
         "text": "Export your resume as a PDF to share with recruiters or a JSON that you will be able to import back onto this app on another computer.",
-        "button": "Export"
+        "button": "Preview & Download"
       },
       "share": {
         "heading": "Share Your Resume",
@@ -260,7 +260,6 @@
         "button": "Load Demo Data"
       },
       "resetEverything": {
-        "text": "Feels like you made too many mistakes? No worries, clear everything with just one click, but be careful if there are no backups.",
         "button": "Reset Everything"
       }
     },
@@ -346,6 +345,22 @@
         "heading": "Export to JSON Format",
         "text": "You can also export your data into JSON format for safe keeping so that you can easily import it back into Reactive Resume whenever you want to edit or generate a resume.",
         "button": "Export JSON"
+      }
+    },
+    "changeTemplate": {
+      "heading": "Keep your colours",
+      "text": "You can keep your color that you have customized, or else if you want to use our default template colors.",
+      "buttons": {
+        "keep": "Keep",
+        "change": "Change"
+      }
+    },
+    "resetEverything": {
+      "heading": "Reset Everything",
+      "text": "Feels like you made too many mistakes? No worries, clear everything with just one click, but be careful if there are no backups.",
+      "buttons": {
+        "reset": "Reset",
+        "cancel": "Cancel"
       }
     }
   }

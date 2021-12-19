@@ -35,22 +35,22 @@ function Navbar() {
   })
 
   return (
-    <nav className="z-50 h-24 flex sticky top-0 inset-x-0 bg-white bg-opacity-75 dark:bg-black transition">
-      <div className="container flex justify-between mx-auto">
+    <nav className="z-50 h-24 flex sticky top-0 inset-x-0 transition">
+      <div className="container px-8 flex justify-between mx-auto">
         <div className="flex items-center">
           <Link
             to="/"
             className="pr-8 dark:border-gray-800 mr-8 flex items-center space-x-2"
           >
             <HiOutlineDocumentDuplicate className="text-5xl text-blue-600" />
-            <span className="text-3xl font-serif text-black dark:text-gray-100 font-bold tracking-tight">
+            <span className="text-3xl text-gray-800 dark:text-slate-100 font-bold tracking-tight">
               BetterCV
             </span>
           </Link>
           <div className="flex space-x-6">
             <button
               onClick={createResume}
-              className="hover:text-gray-900 text-gray-600 text-sm capitalize flex items-center space-x-1 font-semibold"
+              className="dark:hover:text-slate-100 hover:text-gray-800 text-slate-500 text-md capitalize flex items-center space-x-1 font-semibold"
             >
               {t('landing.buttons.create')}
             </button>
@@ -70,7 +70,7 @@ function Navbar() {
             </NavLink> */}
             <a
               href="https://www.facebook.com/phanh.1521/"
-              className="hover:text-gray-900 text-gray-600 text-sm capitalize flex items-center space-x-1 font-semibold"
+              className="dark:hover:text-slate-100 hover:text-gray-800 text-slate-500 text-md capitalize flex items-center space-x-1 font-semibold"
             >
               {t('landing.buttons.about')}
             </a>
@@ -85,17 +85,18 @@ function Navbar() {
               <HiOutlineFolderOpen className="text-3xl text-blue-600" />
             </div>
           </Link>
-          {/* <span onClick={handleDarkMode} className="cursor-pointer">
+          <span onClick={handleDarkMode} className="cursor-pointer">
             {darkMode ? (
               <RiSunFoggyLine className="text-3xl text-yellow-300" />
             ) : (
               <RiMoonFoggyLine className="text-3xl text-blue-600" />
             )}
-          </span> */}
+          </span>
           <Select
             onChange={handleChangeLanguage}
             value={options.find((x) => x.value === language)}
             options={options}
+            className="dark:bg-gray-700"
           />
         </div>
       </div>
