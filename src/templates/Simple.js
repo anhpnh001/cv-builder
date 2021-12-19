@@ -42,10 +42,6 @@ function Basic({}, ref) {
                   className="text-2xl font-medium"
                 />
               )}
-              <span
-                style={{ backgroundColor: colors.primary }}
-                className="w-24 h-2 inline-block rounded-full"
-              ></span>
               {basicsDetails.summary.visible && (
                 <div className="flex items-center space-x-2">
                   <InlineToolbarEditor
@@ -107,16 +103,13 @@ function Basic({}, ref) {
 
   return (
     <>
-      <div
-        style={{
-          backgroundImage: `linear-gradient(to right, ${colors.secondary} 0% 40%, transparent 40%)`,
-        }}
-        className="absolute inset-0"
-      ></div>
       <section ref={ref} className="pt-16 grid grid-cols-5">
         <section className="col-span-2 space-y-4 px-8">
           <div className="flex justify-center">
-            <Avatar path="basics.image" className="overflow-hidden w-48" />
+            <Avatar
+              path="basics.image"
+              className="rounded-full overflow-hidden w-48"
+            />
           </div>
           <Droppable droppableId="0">
             {(provided) => (

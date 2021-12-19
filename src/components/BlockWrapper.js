@@ -2,6 +2,7 @@ import 'rc-slider/assets/index.css'
 import { useState } from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useTranslation } from 'react-i18next'
+import Checkbox from 'rc-checkbox'
 import { FaLightbulb } from 'react-icons/fa'
 import { HiEyeOff } from 'react-icons/hi'
 import { MdSettings } from 'react-icons/md'
@@ -55,10 +56,8 @@ function BlockToolbar({ path }) {
               {Object.keys(detailsValue).map((key) => {
                 return (
                   <div className="space-x-2 flex items-center">
-                    <input
+                    <Checkbox
                       id={key}
-                      type="checkbox"
-                      name={key}
                       checked={detailsValue[key].visible}
                       onChange={(e) => {
                         dispatch({
@@ -70,7 +69,10 @@ function BlockToolbar({ path }) {
                         })
                       }}
                     />
-                    <label htmlFor={key} className="capitalize">
+                    <label
+                      htmlFor={key}
+                      className="flex-1 capitalize cursor-pointer"
+                    >
                       {key}
                     </label>
                   </div>

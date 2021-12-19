@@ -21,7 +21,7 @@ function ResumeList() {
   return (
     <>
       <Navbar />
-      <main className="py-8 container mx-auto flex-grow flex flex-col">
+      <main className="px-8 py-8 container mx-auto flex-grow flex flex-col">
         <Link
           to="/editor/trash"
           className="group relative flex items-center justify-center w-16 h-16 mb-8 bg-gray-200 rounded-lg shadow-inner"

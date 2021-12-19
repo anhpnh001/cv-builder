@@ -126,18 +126,18 @@ const initialState = {
     name: 'Untitled',
     font: 'Open Sans',
     colors: {
-      primary: '#3da9fc',
-      secondary: '#d8eefe',
-      heading: '#094067',
-      text: '#5f6c7b',
+      primary: '#16161a',
+      secondary: '#94a1b2',
+      heading: '#010101',
+      text: '#16161a',
       background: '#fffffe',
     },
     language: '',
-    template: 'Cartoon1',
-    thumbnail: '/assets/images/templates/cartoon1.jpg',
+    template: 'Basic',
+    thumbnail: '/assets/images/templates/basic.jpg',
     layout: [
-      ['basics', 'work', 'education', 'projects', 'awards'],
       ['profiles', 'skills', 'languages', 'interests'],
+      ['basics', 'work', 'education', 'projects', 'awards'],
     ],
     sections: {
       basics: {

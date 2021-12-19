@@ -29,7 +29,7 @@ function NotFound() {
         <button className="bg-gray-400 rounded-full text-lg font-medium text-white px-4 py-2">
           Page not found
         </button>
-        <h1 className="text-7xl font-bold">Error 404!</h1>
+        <h1 className="dark:text-white text-7xl font-bold">Error 404!</h1>
         <p className="text-gray-400 text-xl font-medium">
           Create new resume or come back to the homepage
         </p>
